@@ -1,0 +1,1124 @@
+{
+  "id": 1,
+  "name_test": "Equipo",
+  "description": "finalidad de avance",
+  "text_result": "texto de ejemplo",
+  "area_test": [
+    {
+      "id": 0,
+      "title_area": "Elementos do Negocio",
+      "factor": 0.5,
+      "subAreas": [
+        {
+          "sub_area_title": "O Avanço",
+          "sub_id": 0,
+          "questions": [
+            {
+              "title": "",
+              "id": 1,
+              "label": "1- O que seu produto ou serviço pretende agregar ao seu cliente?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Preços mais baixos do que as alternativas disponíveis (competidores ou não) / Cheaper than the alternatives available (competitors or not)",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Redução de custos do cliente pelo aumento da eficiência / Reduction in customer costs by increasing efficiency",
+                  "value": 2.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Qualidade, confiabilidade e conveniência superior às alternativas atuais (competidores ou não) / Quality, reliability and superior convenience to the current alternatives (competitors or not)",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Redução de passivos ambientais, legais e outros relacionados à atividade do cliente / Reduction of environmental liabilities, legal and other related to the client's activity",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 5,
+                  "label": "e.   Ruptura na rotina do cliente / Disruption in the client's routine",
+                  "value": 3,
+                  "result_text": ""
+                },
+                {
+                  "id": 6,
+                  "label": "f. Várias fontes de valor - estamos em fase de definir precisamente / Various sources of value - are in the process of being defined specifically",
+                  "value": 0.5,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 2,
+              "label": "2- Qual modelo de negócio será o foco principal da empresa ?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Soluções ou serviços construídos sob medida / Solutions or services built to suit",
+                  "value": 0.1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Venda ou licenciamento de produtos ou serviços / Sale or licensing of products or services",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Exploração comercial de base de dados (leads, marketing, etc) / Commercial exploitation of databases (leads, marketing, etc.)",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Serviço de assinatura para retail / Subscription services to retail",
+                  "value": 3,
+                  "result_text": ""
+                },
+                {
+                  "id": 5,
+                  "label": "e.   Divisão de receita com seu cliente / Revenue share with your client",
+                  "value": 3,
+                  "result_text": ""
+                },
+                {
+                  "id": 6,
+                  "label": "f. Em processo de definição / In definition stage",
+                  "value": 1,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 3,
+              "label": "3- Existe alguma empresa ou empresas com modelo de negócio similar ao de sua empresa ?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Sim / Yes",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Não / No",
+                  "value": 2,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 4,
+              "label": "4- Existe atualmente alguma empresa internacional com o mesmo nível de inovação ?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Sim / Yes",
+                  "value": 0.1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Não / No",
+                  "value": 2,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sub_area_title": "Propriedade Intelectual",
+          "sub_id": 1,
+          "questions": [
+            {
+              "title": "",
+              "id": 5,
+              "label": "5- Para manter a vantagem competitiva, qual o % das receitas liquidas será necessário investir em P&D/Inovação quando a empresa estiver na fase de crescimento? / To maintain a competitive advantage, what % of net revenues will be necessary to invest in R&D/Innovation when the company is in a growth phase?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Até 5% / Up to 5%",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  De 5% a 15% / From 5% to 15%",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  De 15% a 25% / From 15% to 25%",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Mais que 25% / More than 25%",
+                  "value": 0.5,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 6,
+              "label": "6- Qual deve ser a principal força de sua competitividade? / What should be the main driver for competitive advantage?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Propriedade intelectual / Intelectual property",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Preço / Price",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Produto / Productt",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Conjunto da obra / All above items",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 5,
+                  "label": "e.   Em definição / to be determined",
+                  "value": 0.1,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sub_area_title": "Status",
+          "sub_id": 2,
+          "questions": [
+            {
+              "title": "",
+              "id": 7,
+              "label": "7- Indique o estágio que melhor reflete a situação atual da sua empresa/serviço / Indicate the stage that better reflects the current situation of your company/service:",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Estágio de boa idéia ou conceito, mas não falei com clientes / Good idea or concept stage, but did not talk to clients yet",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Estágio do protótipo testado internamente e ainda não foi apresentado para clientes / Prototype stage tested internally and has not yet been presented to customers",
+                  "value": 4,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Produto/Serviço testado com clientes e pronto para venda / Product / Service tested with customers and ready to be sold",
+                  "value": 7,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Já faturando o produto/serviço / Already billing the product/service",
+                  "value": 9,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sub_area_title": "Capacidade",
+          "sub_id": 3,
+          "questions": [
+            {
+              "title": "",
+              "id": 8,
+              "label": "8- Considerando o histórico do time, qual frase melhor o define? / Considering the history of the team, which sentence better defines them?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Somos os maiores especialistas do mercado no nosso setor (pesquisadores / programadores / engenheiros / nerds / produto...) / We are the leading market experts in our industry (researchers / developers / engineers / nerds / product ...)",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Nosso time tem enorme experiência no setor, como executivos de grandes competidores e/ou clientes / Our team has extensive experience in the industry, as executives of major competitors and / or customers",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Nosso time já sabe o que é fracasso, pois já tentamos outro negócio anteriormente no mesmo setor / Our team knows what is failure, because tried other business earlier in the same industry",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Aqui temos de tudo: um ex-alto executivo de grande empresa, um nerd, um empreendedor fracassado / Here we have it all: a former senior executive of large company, a nerd, an entrepreneur that failed",
+                  "value": 3,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 9,
+              "label": "9- Qual é a relação do CEO com o setor de atuação da empresa? / What is the relationship between the CEO and the sector the company operates in?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Foi executivo de grande empresa de setor relacionado / He was an executive in a large company of the related industry",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Já empreendeu em outra startup do setor relacionado / Already had previous enterprenuership experience in another startup related to the same industry",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Estudioso/pesquisador do tema sem atuação prévia no setor / Expert/Researcher of the subject, without previous experience in the sector",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Primeira experiência no setor, porém com um time que já atuou no segmento / Does not have experience in this sector but with a team that had previous experience in the sector",
+                  "value": 1,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 10,
+              "label": "10- Qual é a principal motivação dos empreendedores? Escolha apenas uma das respostas: / What is the main motivation of the entrepreneurs? Choose only one answer:",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Trabalhar com maior grau de liberdade/qualidade de vida / Work with a greater degree of freedom / life quality",
+                  "value": 0,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. a. Contribuir para a sociedade com uma empresa inovadora / Contribute to society with an innovative company",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. b. Criar um negócio sustentável de baixo risco, com possibilidade de fluxo de caixa relevantes com riscos controlados/ Create a sustainable business, with the possibility of significant cash flow with controlled risks",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. c. Ficar rico, criando um negócio global ainda que com riscos grandes / Get rich, creating a global business even at great risk",
+                  "value": 2,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 11,
+              "label": "11- O que faria sua empresa dar um salto na direção do seu objetivo? / What would your company need to make the leap towards your goal?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Dinheiro para investir em desenvolvimento de mercado e de produto / Money to invest in market development and product",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Contar com uma pessoa no time que agrege conhecimentos, visão estratégica e rede de relacionamento / Bring on board an individual on the team that adds knowledge, strategic vision and relationship network",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Um contrato comercial com um grande e influente cliente / A commercial contract with a large and influential customer",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Melhorar a gestão administrativo-financeira / Improve the management of financial and administrative processes",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 5,
+                  "label": "e.   Ter um sócio que tenha muita relevência na nossa cadeia de valores / Having a partner who has a lot of relevance in our value chain",
+                  "value": 3,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title_area": "Implementacao",
+      "factor": 0.5,
+      "subAreas": [
+        {
+          "sub_area_title": "Validação",
+          "sub_id": 4,
+          "questions": [
+            {
+              "title": "",
+              "id": 12,
+              "label": "12- Com relação a validação do MVP (seja um produto, processo ou serviço) qual é o estágio atual que se encontra?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Ainda não foram avaliados por clientes em potencial / Have not been evaluated by potential customers",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Clientes em potencial fizeram uma avaliação limitada / Potential clients have made a limited assessment",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Foram plenamente testados e aprovados por clientes em potencial / Have been fully tested and approved by potential customers.",
+                  "value": 4,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Dois ou mais clientes-chave fizeram pedidos a preço de mercado / Two or more key customers have placed orders at market prices",
+                  "value": 6,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sub_area_title": "Plano Mkt",
+          "sub_id": 5,
+          "questions": [
+            {
+              "title": "",
+              "id": 13,
+              "label": "13- Qual é o estágio dos processos de relacionamento com clientes e os canais de venda?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Em fase de avaliação para implementação após a sondagem comercial / Under evaluation for the implementation after the commercial probing",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Canais de relacionamento definidos, mas ainda não foram efetivadas as areas / Relationship channels defined, but not yet the locations",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Estrutura comercial e canais de venda ativos com efetivação de vendas / Commercial channel and active selling channels with effective sales",
+                  "value": 3,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 14,
+              "label": "14- Com relação as metas de venda, em um cenário pessimista, qual a probabilidade das suas vendas não atingirem as projeções do business plan do primeiro ano de atuação no mercado?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Baixa probabilidade, pois já tenho contratos assinados garantindo as projeções do primeiro ano.",
+                  "value": 6,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Baixa probabilidade, pois há grande demanda no mercado.",
+                  "value": 4,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. Baixa probabilidade, pois as projeções foram muito conservadoras.",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. As vendas podem oscilar significativamente no primeiro ano devido ao grau de inovação do produto / serviço.",
+                  "value": 1,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sub_area_title": "Equipe",
+          "sub_id": 6,
+          "questions": [
+            {
+              "title": "",
+              "id": 15,
+              "label": "15- Há quanto tempo os sócio-empreendedores trabalham juntos?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Este é o primeiro projeto que trabalham juntos / This is their first project working together",
+                  "value": 0,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Trabalham até 2 anos juntos / They work together 2 years",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Trabalham de 2 a 5 anos juntos / They work together from 2 to 5 years",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Trabalham a mais de 5 anos juntos / They work together for more than 5 years",
+                  "value": 4,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 16,
+              "label": "16- Qual é o nível de envolvimento dos dois principais empreendedores?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Sócios majoritários e com dedicação integral / Senior partners with full-time dedication",
+                  "value": 3,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Sócios majoritários e com dedicação meio-período / Senior partners with part-time dedication",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Sócios minoritários (ao menos um) com dedicação integral / Minority partners (at least one) with full dedication",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Sócios minoritários (ao menos um) com dedicação meio período / Minority partners (at least one) with half time dedication",
+                  "value": 0,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 17,
+              "label": "17- Se você tivesse quatro investidores interessados na sua empresa, qual seria a sua decisão:",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  maior enterprise valuation, independente do perfil / highest enterprise valuation, regardless the profile",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  melhor rede de relacionamento, mesmo com valuation abaixo do maior / better relationship network, even with valuation below than the higher valuation",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Sócio estratégico do setor, mesmo com possibilidade de perda de controle / Strategic partner of the sector, even with the possibility of losing control",
+                  "value": 4,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Sócio apenas financeiro, com ampla capacidade de investimento, mesmo que houvesse forte diluição dos fundadores / Only financial partner, with significant ability to investment, even if there were strong dilution of the founders",
+                  "value": 1,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sub_area_title": "Oferta de Invest",
+          "sub_id": 7,
+          "questions": [
+            {
+              "title": "",
+              "id": 18,
+              "label": "18- Com relação a oferta para potenciais investidores, sua empresa está disposta a",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Oferecer uma pequena porcentagem do capital social em troca de apenas um pequeno investimento",
+                  "value": 0,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Oferecer uma moderada porcentagem do capital social da empresa por um investimento capaz de sustentar o fluxo de caixa para os próximos doze meses",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Negociar condições de significativa participação societária em função do volume de recursos humanos e financeiros que serão aportados",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Os atuais recursos financeiros são suficientes para sustentar o crescimento da empresa no médio prazo",
+                  "value": 3,
+                  "result_text": ""
+                },
+                {
+                  "id": 5,
+                  "label": "e.   Captar montante significativo de capital para sustentar o crescimento, mesmo que haja uma diluição significativa",
+                  "value": 4,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 19,
+              "label": "19- Até o momento como foi financiado o desenvolvimento da empresa?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Recursos próprios dos empreendedores / Entrepreneurs´ own resources",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  Recursos dos empreendedores, amigos e parentes / Entrepreneurs´ own resources, friends and relatives",
+                  "value": 0,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Recursos dos empreendedores, seed e Investidor Anjo / Resources of entrepreneurs,seed, and Angel Investor",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Já houve uma rodada de investimento com investidor/es altamente qualificado/s / There was already a round of investment with highly qualified investor/s",
+                  "value": 4,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title_area": "Resultados",
+      "factor": 0.5,
+      "subAreas": [
+        {
+          "sub_area_title": "Tamanho de Mercado",
+          "sub_id": 8,
+          "questions": [
+            {
+              "title": "",
+              "id": 20,
+              "label": "20- Onde você visualiza o maior potencial de mercado para o seu produto e/ou serviço?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  foco total no Brasil, pois este mercado é enorme / total focus in Brazil, as it's a huge market",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  começar com Brasil e expandir rapidamente para Am. Lat. / start with Brazil and expand quickly to LATAM",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  Foram plenamente testados e aprovados por clientes em potencial / Have been fully tested and approved by potential customers.",
+                  "value": 3,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Dois ou mais clientes-chave fizeram pedidos a preço de mercado / Two or more key customers have placed orders at market prices",
+                  "value": 1.5,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 21,
+              "label": "21- Quais tipos de mercado o seu produto e/ou serviço pretende atuar?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  Nicho / Niche",
+                  "value": 1,
+                  "result_text": ""
+                },
+                { "id": 2, "label": "b. B2B", "value": 1.5, "result_text": "" },
+                {
+                  "id": 3,
+                  "label": "c. B2C (Massificado) / (Massified)",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Múltiplos mercados / For multi-sided markets",
+                  "value": 3,
+                  "result_text": ""
+                },
+                {
+                  "id": 5,
+                  "label": "e. Governo (Público) / Government (Public)",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 6,
+                  "label": "f. Ainda não tenho certeza / Not sure yet",
+                  "value": 0,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 22,
+              "label": "22- Quanto do crescimento de mercado é decorrente diretamente do seu produto?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a.  100% (este mercado anteriormente não existia) / (this market previously did not exist)",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b.  0% (mercado virá de outro setor ou competidor) / (market will come from another industry or competitor)",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c.  menos de 50% / less than 50%",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. As vendas podem oscilar significativamente no primeiro ano devido ao grau de inovação do produto / serviço.",
+                  "value": 2,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sub_area_title": "Particip de Mercado",
+          "sub_id": 9,
+          "questions": [
+            {
+              "title": "",
+              "id": 23,
+              "label": "23- Qual sua expectativa de conquista de participação de mercado para um horizonte de 5 anos?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a. menos de 10% / less than 10%",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. 10% a 25% / from 10% to 25%",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. entre 25% e 50% / between 25% and 50%",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. mais de 50% / more than 50%",
+                  "value": 1,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 24,
+              "label": "24- Qual é o market share do líder do seu mercado alvo?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a. mais de 50% / more than 50%",
+                  "value": 0,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. entre 20% e 50% / between 20% and 50%",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. menos de 20% / less than 20%",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. mercado ainda não existe / market does not yet exist",
+                  "value": 1,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 25,
+              "label": "25- Qual deve ser o seu principal driver de sua competitividade?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a. Propriedade intelectual / Intelectual property",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. Preço / Price",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. Produto / Product",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Conjunto da obra / All above items",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 5,
+                  "label": "e. Ainda não tenho certeza / Not sure yet",
+                  "value": 0,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sub_area_title": "Concorrência",
+          "sub_id": 10,
+          "questions": [
+            {
+              "title": "",
+              "id": 26,
+              "label": "26- Qual é o porte do líder do seu mercado target (ou de onde ele será 'roubado') ?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a. Empresa global listada em bolsa / Global company listed on the stock market",
+                  "value": 0,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. Empresa grande nacional / national big company",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. PME tradicional / Traditional SMEs",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Empresa nascente / start-up",
+                  "value": 1.5,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 27,
+              "label": "27- Qual é a principal barreira de entrada neste mercado?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a. Tecnologia inovadora / innovative technology",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. Primeiro a ingressar no mercado, leva tudo / first mover gets all",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. Nome de marca / brand name",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. custo/escala / cost/scale issue",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 5,
+                  "label": "e. Não tenho certeza ainda / Not sure yet",
+                  "value": 0,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 28,
+              "label": "28- O que impede uma grande empresa de entrar nesse mercado agora?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a. Falta interesse ou não conhece / lack of interest or does not know it",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. Seus produtos atuais concorrem com o nosso / their current products compete with ours",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. Tecnologia / Technology",
+                  "value": 0.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 5,
+                  "label": "e. Há ao menos uma planejando entrar / there is at least one planning to enter",
+                  "value": 0,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sub_area_title": "Taxa de Retorno",
+          "sub_id": 11,
+          "questions": [
+            {
+              "title": "",
+              "id": 29,
+              "label": "29- Para cada R$ 1.000,00 de aumento nas receitas, qual é o incremento nos custos da empresa  (diretos + custos de aquisição de clientes)?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a. Mais de R$ 900 / more than R$ 900",
+                  "value": 0,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. Entre R$ 500 e R$ 900 / between R$ 500 to R$ 900",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. Entre R$ 200 a R$ 500 / between R$ 200 and R$ 500",
+                  "value": 1.5,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Menos de R$ 200 / less than R$ 200",
+                  "value": 2,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 30,
+              "label": "30- O investimento necessário para viabilizar a empresa será pago se:",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a. Conseguirmos de 10% a 30% do mercado que projetamos / we get between 10% to 30% of the market size we projected",
+                  "value": 3,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. Conseguirmos de 20% a 50% .... / we get between 20% to 50% ....",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. Conseguirmos 50% a 70% .... / we get between 50% to 70% ....",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Conseguirmos mais de 70% .... / we get more than 70% ....",
+                  "value": 0,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 31,
+              "label": "31- Qual é o tamanho do setor do seu mercado de atuação (em faturamento / ano)",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a. Até US$ 50 Milhões / up to US$ 50 Million",
+                  "value": 0,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. De US$ 50 Milh›es até US$ 100 Milhões / from US$ 50 Million up to US$ 100 Million",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. De US$ 100 Milhões até US$ 500 Milhões / from US$ 100 Million up to US$ 250 Million",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Acima de US$ 500 Milhões / over US$ 500 Million",
+                  "value": 5,
+                  "result_text": ""
+                }
+              ]
+            },
+            {
+              "title": "",
+              "id": 32,
+              "label": "32- Considerando as possibilidades de saída futura dos investidores no prazo de 5 anos,  qual das opções abaixo você considera mais provável?",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "a. Venda para os sócios fundadores ou outros investidores / Sale to founders or other investors",
+                  "value": 0,
+                  "result_text": ""
+                },
+                {
+                  "id": 2,
+                  "label": "b. Venda para um fundo de Venture Capital ou Private Equity / Sale to VC or PE funds",
+                  "value": 1,
+                  "result_text": ""
+                },
+                {
+                  "id": 3,
+                  "label": "c. Venda para um comprador estratégico o corporação / Sale to Strategic Buyer",
+                  "value": 2,
+                  "result_text": ""
+                },
+                {
+                  "id": 4,
+                  "label": "d. Abertura de capital / IPO / Initial Public Offering ( IPO )",
+                  "value": 3,
+                  "result_text": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

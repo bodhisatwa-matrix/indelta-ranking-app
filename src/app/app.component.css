@@ -1,0 +1,13 @@
+.full-width {
+  width: 45%;
+  padding: 5px;
+}
+.area {
+  margin: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.area > .full-width {
+  width: 25%;
+  padding: 5px;
+}
