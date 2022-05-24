@@ -1,0 +1,333 @@
+<div class="createForm" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!loading">
+    <div *ngIf="!isDone">
+        <mat-toolbar color="secondary" class="headerLine">
+            <span style="display: flex; align-items: center; gap: 40px;">
+                <img width="130" src="../../../../assets/logo_idelta.png" alt="">
+                <span>Indelta Rating</span>
+            </span>
+            <span class="example-spacer"></span>
+            <div class="d-flex fechaHeader">
+                <h2>
+                    {{
+                        projName
+                    }}
+                </h2>
+                <p>
+                    Fecha de creación: {{projDates[0]}}
+                </p>
+                <p>
+                    Ultima edición: {{projDates[0]}}
+                </p>
+            </div>
+          </mat-toolbar>
+          <hr class="hrd">
+        <div class="createForm">
+            <mat-card
+                class="example-stepper"
+            >
+                <form [formGroup]="ProjectsForm">
+                    <!-- orientation="vertical" -->
+                    <mat-stepper 
+                        formArrayName="areas" 
+                        [linear]="isLinear"
+                    >
+    
+                        <ng-template matStepperIcon="edit">
+                            <mat-icon>check</mat-icon>
+                        </ng-template>
+                        <mat-step>
+                            <div class="stepChanger">
+                                <div class=""></div>
+                                <div class="butons">
+                                    <button mat-flat-button [disabled]="!projectForm.valid" color="primary" (click)="saveBasic()" matStepperNext>
+                                        Siguiente
+                                    </button>
+                                    <button type="submit" [disabled]="!ProjectsForm.valid" (click)="create()"  mat-stroked-button mat-flat-button
+                                    class="summitbot" matStepperNext>
+                                        Finalizar y generar resultado
+                                    </button>
+                                </div>
+                        </div>
+                            <form [formGroup]="projectForm">
+                                <div class="actualforms">
+                                    <ng-container>
+                                        <ng-template 
+                                            matStepLabel
+                                        >
+                                            <p
+                                                class="pTitle"
+                                            >
+                                                INFORMACOES BASICAS 
+                                            </p>
+                                        </ng-template>
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Nombre de startup
+                                                </h2>
+                                            </div>
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>...</mat-label>
+                                                <input class="summi" matInput formControlName="nombre_startup" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Razão Social da Empresa
+                                                </h2>
+                                            </div>
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>...</mat-label>
+                                                <input class="summi" matInput formControlName="razon_social" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Email do responsavel 
+                                                </h2>
+                                            </div>
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>example@email.com</mat-label>
+                                                <input class="summi" matInput formControlName="email" required>
+                                            </mat-form-field>
+                                        </div>
+                                        
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Relacione os Sócios Atuais da Startup com percentual de participação ( Captable % ) e cargos que ocupam
+                                                </h2>
+                                            </div>
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label></mat-label>
+                                                <textarea 
+                                                    matInput 
+                                                    formControlName="endereco" 
+                                                    required placeholder="">
+                                                </textarea>
+                                            </mat-form-field>
+                                        </div>
+                                                
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Relacione os colaboradores (Time) que trabalham na Startup - suas principais funções e tipos de vínculos com a empresa.
+                                                </h2>
+                                            </div>
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label></mat-label>
+                                                <textarea 
+                                                    matInput 
+                                                    formControlName="relaciones" 
+                                                    required placeholder="">
+                                                </textarea>
+                                            </mat-form-field>
+                                        </div>
+    
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Por favor informe o link público do LinkedIn dos principais membros da equipe / Please inform the public LinkedIn links of the main team member.
+                                                </h2>
+                                            </div>
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>www.example.com</mat-label>
+                                                <input class="summi" matInput formControlName="link" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Qual o segmento de atuacao de sua Startup?
+                                                </h2>
+                                            </div>
+                                            <mat-form-field appearance="fill">
+                                                <mat-label></mat-label>
+                                                <input class="summi" matInput formControlName="segmento" required>
+                                            </mat-form-field>
+                                        </div>
+                                    
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Qual a principal carência do mercado (Dor ou Problema) que seu produto ou serviço pretende solucionar?
+                                                </h2>
+                                            </div>
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label></mat-label>
+                                                <textarea 
+                                                    matInput 
+                                                    formControlName="principal" 
+                                                    required placeholder="">
+                                                </textarea>
+                                            </mat-form-field>
+                                        </div>
+                                        
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Descreva seu produto ou serviço de forma objetiva.
+                                                </h2>
+                                            </div>
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label></mat-label>
+                                                <input class="summi" matInput formControlName="descreva" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Inclua aqui um PITCH de sua Startup. Limite a sua apresentação a 15 slides e 10MB.
+                                                </h2>
+                                            </div>
+                                            <mat-form-field appearance="fill">
+                                                <mat-label></mat-label>
+                                                <input class="summi" matInput formControlName="pitch" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Inclua aqui um VIDEO de sua Startup. Limite seu video a 5 minutos e 100MB.
+                                                </h2>
+                                            </div>
+                                            <mat-form-field appearance="fill">
+                                                <mat-label></mat-label>
+                                                <input class="summi" matInput formControlName="video" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Qual seu modelo de negócio? 
+                                                </h2>
+                                            </div>
+                                            <mat-form-field appearance="fill">
+                                                <mat-label></mat-label>
+                                                <input class="summi" matInput formControlName="modelo" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="question">
+                                            <div class="questionsx">
+                                                <h2>
+                                                    Explique sobre a forma de monetizacao. 
+                                                </h2>
+                                            </div>
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label></mat-label>
+                                                <input class="summi" matInput formControlName="menetizacao" required>
+                                            </mat-form-field>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </form>  
+                            <div class="stepChanger">
+                                <div class=""></div>
+                                <div class="butons">
+                                    <button mat-flat-button [disabled]="!projectForm.valid" color="primary" (click)="saveBasic()" matStepperNext>
+                                        Siguiente
+                                    </button>
+                                    <button type="submit" [disabled]="!ProjectsForm.valid" (click)="create()"  mat-stroked-button mat-flat-button
+                                    class="summitbot" matStepperNext>
+                                        Finalizar y generar resultado
+                                    </button>
+                                </div>
+                        </div>                      
+                        </mat-step>
+                        <mat-step *ngFor="let areaQuest of areas.controls; let i=index;">
+                                    <form [formGroup]="areaQuest">
+                                    <div class="stepChanger">
+                                        <div>
+                                            <button class="prev" mat-stroked-button matStepperPrevious>Atrás</button>
+                                        </div>
+                                        <div class="butons">
+                                            <button mat-flat-button *ngIf="(i + 1) !== testAdapter.length" (click)="saveArea(i)" [disabled]="!areaQuest.valid" color="primary" matStepperNext>
+                                                Siguiente
+                                            </button>
+                                            <button type="submit" [disabled]="!ProjectsForm.valid" (click)="create()"  mat-stroked-button mat-flat-button
+                                                class="summitbot" matStepperNext>
+                                                Finalizar y generar resultado
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="actualforms">
+                                        <ng-container *ngFor="let quest of getObjectArray(areaQuest.controls); let q=index;">
+                                            <ng-template 
+                                                matStepLabel
+                                            >
+                                                <p
+                                                    class="pTitle"
+                                                    matTooltip="{{testAdapter[i].title_area}}"
+                                                >
+                                                    {{testAdapter[i].title_area}}
+                                                </p>
+                                            </ng-template>
+                                            <mat-radio-group 
+                                                class="radioOptions"
+                                                required aria-label="Select an option"
+                                                [formControlName]="quest"
+                                                color="primary" aria-required="true"
+                                                aria-disabled="true"
+                                            >
+                                                <!-- <h3>{{getLetter(q)}}. {{testAdapter[i].questions[q].title}} <br>
+                                                    i. {{testAdapter[i].questions[q].label}}</h3> -->
+                                                <div class="questionsx">
+                                                    <h2>
+                                                        {{testAdapter[i].questions[q].title}}
+                                                    </h2>
+                                                    <h3 class="questionText">
+                                                        {{testAdapter[i].questions[q].label}}
+                                                    </h3>
+                                                </div>
+                                                <ng-container *ngFor="let option of testAdapter[i].questions[q].options; let q=index;">
+                                                    <!-- <mat-radio-button [value]="option.value">{{option.label}}</mat-radio-button> -->
+                                                    <mat-radio-button [value]="option.id">{{option.label}}</mat-radio-button>
+                                                </ng-container>
+                                            </mat-radio-group>
+                                        </ng-container>
+                                    </div>
+                                    <div class="stepChanger">
+                                        <div>
+                                            <button class="prev" mat-stroked-button matStepperPrevious>Atrás</button>
+                                        </div>
+                                        <div class="butons">
+                                            <button mat-flat-button *ngIf="(i + 1) !== testAdapter.length" (click)="saveArea(i)" [disabled]="!areaQuest.valid" color="primary" matStepperNext>
+                                                Siguiente
+                                            </button>
+                                            <button type="submit" [disabled]="!ProjectsForm.valid" (click)="create()"  mat-stroked-button mat-flat-button
+                                                class="summitbot" matStepperNext>
+                                                Finalizar y generar resultado
+                                            </button>
+                                        </div>
+                                </div>
+                                    
+                                </form>
+                            </mat-step>
+                    </mat-stepper>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+    <div *ngIf="isDone">
+        <div color="primary" class="subHeader" *ngIf="!loading">
+            <div class="startLeft">
+                <button class="prev" color="warn" mat-flat-button routerLink="/projects">Cerrar</button>
+            </div>
+            <span class="example-spacer"></span>
+            <div class="d-flex">
+                <h2>
+                    {{
+                        projName
+                    }}
+                </h2>
+            </div>
+        </div>
+        <hr class="hrd">
+        <app-start-up-results></app-start-up-results>
+    </div>
+</div>

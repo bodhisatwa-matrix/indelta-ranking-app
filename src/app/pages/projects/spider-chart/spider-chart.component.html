@@ -1,0 +1,60 @@
+<app-header></app-header>
+<hr class="hrd">
+<div class="fullScreen" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>
+<p *ngIf="!loading" class="subeder">
+    <mat-toolbar color="secondary">
+        <a routerLink="/projects" style="color: rgb(58, 58, 58);">
+            <button mat-icon-button aria-label="Example icon button with a home icon">
+                <mat-icon>arrow_back</mat-icon>
+              </button>
+        </a>
+        <span>Startups - {{project.company}}</span>
+        <span class="example-spacer"></span>
+        <div class="d-flex">
+            <p>
+                Fecha de creación: <strong>{{project.dateCreated}}</strong>
+            </p>
+            <p>
+                Ultima edición: <strong>{{project.dateUpdate}}</strong>
+            </p>
+        </div>
+    </mat-toolbar>
+</p>
+<div class="" *ngIf="!loading">
+    <div class="resultTitle">
+        <div class="resultHeader">
+            <div class="pageLogo">
+                <img width="200" src="../../../../assets/logo_idelta.png" alt="">
+            </div>
+            <!-- <div class="chartSpider">
+                <canvas baseChart
+                    [datasets]="projectVal"
+                    [options]="areasVal"
+                    [labels]="areasTitle"
+                    [type]="radarChartType">
+                </canvas>
+            </div>  -->
+            <div class="chartSpiderHolder">
+                <div class="chartSpider">
+                    <canvas baseChart
+                        [datasets]="radarChartData"
+                        [options]="radarChartOptions"
+                        [labels]="radarChartLabels"
+                        [type]="radarChartType"
+                        >
+                    </canvas>
+                </div> 
+            </div>
+            <!-- <div class="basicInfo">
+                <h4>
+                    Razon social
+                </h4>
+                <h4>
+                    Fecha del informe
+                </h4>
+            </div> -->
+        </div>
+    </div>
+</div>

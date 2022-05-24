@@ -1,0 +1,333 @@
+.fullScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.h3Tit{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.h3Tit strong{
+    font-size: 45px;
+    margin-left: 4px;
+}
+.introText{
+    font-size: 16px;
+}
+.charts{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 40px;
+    justify-content: space-around;
+}
+.resChart{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 205px;
+}
+.resChart label{
+    white-space: nowrap;
+}
+.chartResu{
+    margin: 10px 20px;
+}
+.artreas{
+    margin-top: 90px;
+}
+h3{
+    font-weight: 600;
+    font-size: 19px;
+    margin: 10px 20px;
+}
+.hrd{
+    margin: 0px;
+}
+.textualResults{
+    margin: 5px 20px 50px;
+    font-size: 17px;
+}
+.textualResults ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.textualResults ul strong.corr{
+    color: rgb(0, 179, 54);
+}
+.textualResults ul strong.incorr{
+    color: rgb(179, 0, 0);
+}
+.example-spacer{
+    width: 100%;
+}
+.d-flex{
+    gap: 20px;
+    display: flex;
+    align-items: center;
+}
+.d-flex p{
+    margin: 0px;
+}
+
+.subeder .mat-toolbar-single-row {    
+    font-size: 15px;
+    max-width: 100vw;
+    overflow: auto;
+}
+.resChart h1{
+    font-weight: 600;
+    position: absolute;
+    width: 205px;
+    height: 260px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    align-self: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap; /* added - this tells Flex to wrap onto a new line, if there is no space. */
+}
+
+.column {
+    display: inline block;
+    padding: 0.5em;
+    display: block;
+    width: 23.333%;
+    box-sizing: border-box; /* added - this changes the way padding is applied, so it always stays at 33.33%, regardless of padding */
+}
+.chartSpider{
+    //display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 45vw;
+    margin: auto;
+}
+
+.tableLine{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.areaTable{
+    box-shadow: none;
+    width: 100%;
+}
+.noAuto{
+    width: 270px;
+    margin: 0px 20px;
+    h1{
+        font-weight: 800;
+        position: absolute;
+        width: 270px;
+        height: 330px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        align-self: center;
+    }
+}
+
+.textTitResult{
+    font-size: 38px;
+}
+
+.generalGrahp{
+    display: flex;
+    align-items: center;
+}
+.resTextt{
+    width: 600px;
+    font-size: 21px;
+}
+.h3Tit{
+    white-space: nowrap;
+}
+h3{
+    font-size: 25px;
+}
+.chartLabel{
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    margin: auto;
+    font-size: 20px;
+}
+.resChart{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultHeader{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 24px;
+    width: 43%;
+}
+
+.holeGraphHolder{
+    box-shadow: 2px 1px 8px -2px #0000003d;
+    border-radius: 5px;
+    border: solid 1px #bebebe80;
+    padding: 8px;
+    background-color: #ffffff;
+    width: 75%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+.chartSide{
+    display: none;
+    border-radius: 5px;
+    border: solid 1px #bebebe80;
+    width: 28%;
+    justify-content: center;
+    align-items: center;
+}
+
+.basicInfo h4{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.projectMainInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.projectMainInfo h4{
+    font-weight: 600;
+    margin: 0px 20px;
+}
+
+.projectMainInfo{
+    h4, p, h3{
+        margin: 0px 20px;
+        padding: 0px;
+    }
+    h3{
+        font-size: 19px;
+    }
+    h4{
+        font-size: 19px;
+    }
+    p{
+        font-size: 15px
+    }
+}
+
+.areaByTable{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+.tabFot{
+    align-items: center;
+    width: 100%;
+    display: flex;
+    // background-color: #ededed;
+    color: rgb(38, 38, 38);
+    border-radius: 0px 0px 5px 5px;
+    h3{
+        width: 40.4%;
+        font-size: 0.8rem;
+    }
+    p{
+        margin: 0px;
+    }
+
+    .tabFotoal{
+        width: 14.4%;
+    }
+    .tabFotmax{
+        width: 6%;
+    }
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+.unitLineChart{
+    width: 150px;
+    height: 75px;
+}
+
+@media screen and (max-width: 768px){
+    .tabFot{
+        align-items: center;
+        width: 100%;
+        display: flex;
+    }
+    .areaByTable{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+    }
+    .chartSide{
+        width: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .holeGraphHolder{
+        width: 100% !important;
+        display: flex;
+        margin: 20px 0px 0px !important;
+    }
+    p.resTextt{
+        font-size: 15px;
+        margin: auto;
+        width: 90%;
+    }
+    .resultHeader{
+        width: 80vw;
+    }
+    .resultHeader{
+        text-align: center;
+        margin: auto;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        flex-direction: column;
+    }
+    .generalGrahp{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .holeGraphHolder{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tableLine{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+}

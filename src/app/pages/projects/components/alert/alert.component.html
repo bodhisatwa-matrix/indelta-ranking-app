@@ -1,0 +1,15 @@
+<div class="modal" *ngIf="isOpen">
+    <mat-card
+        class="example-stepper"
+    >
+        <form [formGroup]="projectForm" (ngSubmit)="createProject()">
+            <h2>
+                Seguro que desea borrar esta startup?
+            </h2>
+            <div class="buttons">
+                <button (click)="delete(idApp)" [disabled]="loading" class="summi" mat-raised-button>Cancelar</button>
+                <button type="submit" [disabled]="!projectForm.valid || loading" class="summi" mat-raised-button color="primary">Crear</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

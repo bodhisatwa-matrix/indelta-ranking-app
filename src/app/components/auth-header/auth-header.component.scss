@@ -1,0 +1,14 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+nav{
+    display: flex;
+    gap: 20px;
+    a{
+        color: white;
+        text-decoration: none;
+        &:hover{
+            color: rgba(255, 255, 255, 0.858);
+        }
+    }
+}

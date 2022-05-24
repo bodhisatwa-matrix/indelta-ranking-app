@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  compliance-app:
+    environment:
+      - PORT
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PORT: ${PORT}
+    image: "node:lts-alpine"
+    container_name: indelta-ranking-app
+    restart: unless-stopped
+    ports:
+      - "${DEPLOYMENT_INTERNAL_ADDRESS}${PORT}:8181"
+

@@ -1,0 +1,244 @@
+.fullScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.h3Tit{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.h3Tit strong{
+    font-size: 45px;
+    margin-left: 4px;
+}
+.introText{
+    font-size: 16px;
+}
+.charts{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 40px;
+    justify-content: space-around;
+}
+.resChart{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 205px;
+}
+.resChart label{
+    white-space: nowrap;
+}
+.chartResu{
+    margin: 10px 20px;
+}
+.artreas{
+    margin-top: 90px;
+}
+h3{
+    font-weight: 600;
+    font-size: 19px;
+    margin: 10px 20px;
+}
+.hrd{
+    margin: 0px;
+}
+.textualResults{
+    margin: 5px 20px 50px;
+    font-size: 17px;
+}
+.textualResults ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.textualResults ul strong.corr{
+    color: rgb(0, 179, 54);
+}
+.textualResults ul strong.incorr{
+    color: rgb(179, 0, 0);
+}
+.example-spacer{
+    width: 100%;
+}
+.d-flex{
+    gap: 20px;
+    display: flex;
+    align-items: center;
+}
+.d-flex p{
+    margin: 0px;
+}
+
+.subeder .mat-toolbar-single-row {    
+    font-size: 15px;
+}
+.resChart h1{
+    font-weight: 600;
+    position: absolute;
+    width: 205px;
+    height: 260px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    align-self: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.column {
+    display: inline block;
+    padding: 0.5em;
+    display: block;
+    width: 23.333%;
+    box-sizing: border-box;
+}
+.chartSpiderHolder{
+    height: 70vh;
+    width: 100vh;
+    overflow: hidden;
+    transform: translateY(-40px);
+}
+.chartSpider{
+    transform: translateY(-94px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 69vh;
+    width: 85vh;
+    margin: auto;
+}
+
+.tableLine{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.areaTable{
+    width: 70%;
+}
+.noAuto{
+    width: 270px;
+    margin: 0px 20px;
+    h1{
+        font-weight: 800;
+        position: absolute;
+        width: 270px;
+        height: 330px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        align-self: center;
+    }
+}
+
+.textTitResult{
+    font-size: 38px;
+}
+
+.generalGrahp{
+    display: flex;
+    align-items: center;
+}
+.resTextt{
+    width: 600px;
+    font-size: 21px;
+}
+.h3Tit{
+    white-space: nowrap;
+}
+h3{
+    font-size: 25px;
+}
+.chartLabel{
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    margin: auto;
+    font-size: 20px;
+}
+.resChart{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultHeader{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .resultHeader{
+        text-align: center;
+        margin: auto;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        flex-direction: column;
+    }
+    .generalGrahp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.basicInfo h4{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.projectMainInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.projectMainInfo h4{
+    font-weight: 600;
+    margin: 0px 20px;
+}
+
+.projectMainInfo{
+    h4, p, h3{
+        margin: 0px 20px;
+        padding: 0px;
+    }
+    h3{
+        font-size: 19px;
+    }
+    h4{
+        font-size: 19px;
+    }
+    p{
+        font-size: 15px
+    }
+}
+
+.resultHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pageLogo{
+    display: flex;
+    width: 100%;
+    img{
+        padding: 0px 30px;
+    }
+}

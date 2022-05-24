@@ -1,0 +1,146 @@
+<app-header></app-header>
+<app-modal [isOpen]="isOpen"></app-modal>
+<app-alert ></app-alert>
+<div class="modal" *ngIf="isOpenAlert">
+  <mat-card
+      class="example-stepper"
+  >
+      <form>
+          <h2>
+              Seguro que desea borrar esta startup?
+          </h2>
+          <div class="buttons">
+            <button (click)="openClose(onDelThis)" [disabled]="loading" class="summi" mat-raised-button>Cancelar</button>
+            <button (click)="delete(onDelThis)" type="submit" class="summi" mat-raised-button color="warn">Borrar</button>
+          </div>
+      </form>
+  </mat-card>
+</div>
+<!-- <app-poper></app-poper> -->
+<div class="fullScreen" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>
+<div class="creat" *ngIf="!loading">
+  <h2>
+    Startups
+  </h2>
+  <div class="searchbar">
+    <mat-form-field appearance="standard">
+      <mat-label>Filtrar</mat-label>
+      <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filtrar">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <button (click)="createProject()" mat-flat-button color="primary">
+      Crear startup
+  </button>
+  <div class="downButton" (click)="downloadTest()" mat-button color="secondary" aria-label="Example icon button with a home icon">
+    <mat-icon>download</mat-icon>
+  </div>
+</div>
+<div class="projectsList">
+    <table 
+      *ngIf="!loading" 
+      color="accent"
+      [dataSource]="dataSource"
+      mat-table matSort
+      class="mat-elevation-z8 listTable"
+      matSortStart="desc"
+    >
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Startup </th>
+          <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.basic_info.email}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef> Fecha inicio </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateCreated}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef> Fecha de actualización </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateUpdate}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="resultado">
+          <th mat-header-cell *matHeaderCellDef> Resultado </th>
+          <td mat-cell *matCellDef="let element"> {{element.resultado? element.resultado : "-" }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Estado </th>
+          <td mat-cell *matCellDef="let element"> {{element.resultado? "Completo" : "Pendiente" }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button [matMenuTriggerFor]="menu" style="font-weight: 800;">. . .</button>
+            <mat-menu #menu="matMenu">
+              <a target="_blank" href="http://localhost:4200/#/startups/startup/{{element.id}}">
+                <button 
+                  mat-icon-button 
+                  color="primary" 
+                  matTooltip="Form Público"
+                  aria-label="Example icon button with a home icon"
+                >
+                  <mat-icon>done</mat-icon>
+                </button>
+              </a>
+              <a [routerLink]="['edit', element.id]">
+                <button 
+                  matTooltip="Form Privado"
+                  mat-icon-button color="primary" aria-label="Example icon button with a home icon"
+                >
+                  <mat-icon>description</mat-icon>
+                </button>
+              </a>
+              <a *ngIf="element.resultado" [routerLink]="['resultados', element.id]">
+                <button 
+                matTooltip="Reporte Público"
+                  mat-icon-button color="primary" aria-label="Example icon button with a home icon"
+                >
+                  <mat-icon>data_usage</mat-icon>
+                </button>
+              </a>
+              <a *ngIf="element.resultado" [routerLink]="['charts', element.id]">
+                <button 
+                  matTooltip="Reporte Radar"
+                  mat-icon-button color="primary" aria-label="Example icon button with a home icon"
+                >
+                  <mat-icon>visibility</mat-icon>
+                </button>
+              </a>
+              <a *ngIf="element.resultado" [routerLink]="['report', element.id]">
+                <button 
+                  matTooltip="Reporte"
+                  mat-icon-button color="primary" aria-label="Example icon button with a home icon"
+                >
+                  <mat-icon>summarize</mat-icon>
+                </button>
+              </a>
+              <button 
+                matTooltip="Borrar"
+                (click)="openClose(element.id)" 
+                mat-icon-button color="warn" aria-label="Example icon button with a home icon"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </mat-menu>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

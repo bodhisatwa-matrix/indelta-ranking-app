@@ -1,0 +1,37 @@
+<!-- <app-auth-header></app-auth-header> -->
+
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card color="" class="box">
+      <form role="form" [formGroup]="loginForm">
+        <div class="centerimg">
+          <img width="300" src="../../../../assets/logo_idelta.png" alt="">
+        </div>
+        <br><br>
+        <mat-card-header>
+          <mat-card-title>
+            Solicitar formulario de Indelta Rating
+          </mat-card-title>
+          <p class="formDescription">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, possimus! A corporis dolore nisi itaque
+          </p>
+        </mat-card-header>
+        <mat-card-content>
+          
+          <mat-form-field class="example-full-width">
+            <!-- <input matInput placeholder="email" formControlName="email" required> -->
+            <input matInput placeholder="email" formControlName="email">
+          </mat-form-field>
+          <ng-hcaptcha formControlName="captcha">
+          </ng-hcaptcha>
+  
+        </mat-card-content>
+        <button type="submit" (click)="createProject()" mat-flat-button color="primary" [disabled]="!loginForm.valid" class="btn-block">
+          Enviar Solicitud
+        </button>
+        <!-- <a routerLink="/projects" style="color: white;">
+          <button button color="blue" class="btn-block btn-blue">Log in</button>
+        </a> -->
+      </form>
+    </mat-card>
+</div>

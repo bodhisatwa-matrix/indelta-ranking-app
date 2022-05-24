@@ -1,0 +1,11 @@
+.example-spacer{
+    width: 100%;
+}
+.indigoHeader{
+    background-color: rgb(56, 109, 255);
+}
+@media screen and (max-width: 768px){
+    .headerLine{
+        font-size: 16px;
+    }
+}

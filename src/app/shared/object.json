@@ -1,0 +1,323 @@
+{
+  "security": {
+    "user": "admin@gmail.com",
+    "pass": "12345"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "company": "version do",
+      "dateCreated": "23/12/2020 - 12:36:36",
+      "dateUpdate": "23/12/2020 - 17:06:14",
+      "resultado": null,
+      "testId": 1,
+      "areas_result": [
+        {
+          "area_id": 1,
+          "result_area": 10,
+          "compliance_percent": 0.9,
+          "answer": [
+            {
+              "id_question": 1,
+              "id_options": "",
+              "date_answer": "23/01/2020"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "test": {
+    "id": 1,
+    "name_test": "test para version",
+    "description": "finalidad de avance",
+    "text_result": "texto de eemplo",
+    "area_test": [
+      {
+        "id": 0,
+        "title_area": "Area 1. Ecosistema tecnológico.",
+        "factor": 0.5,
+        "questions": [
+          {
+            "title": "Actualidad",
+            "id": 1,
+            "label": "¿Representa la tecnología desarrollada un hito frente a la tecnología actual?",
+            "options": [
+              {
+                "id": 1,
+                "label": "Si",
+                "value": 1,
+                "result_text": ""
+              },
+              {
+                "id": 2,
+                "label": "No",
+                "value": 2,
+                "result_text": ""
+              },
+              {
+                "id": 3,
+                "label": "No lo se",
+                "value": 0.4,
+                "result_text": ""
+              }
+            ]
+          },
+          {
+            "title": "Disponibilidad",
+            "id": 2,
+            "label": "¿Está disponible en la actualidad todos los habilitadores tecnológicos para el producto que se esta desarrollando?",
+            "options": [
+              {
+                "id": 1,
+                "label": "Si",
+                "value": 1,
+                "result_text": ""
+              },
+              {
+                "id": 2,
+                "label": "No",
+                "value": 2,
+                "result_text": ""
+              },
+              {
+                "id": 3,
+                "label": "No lo se",
+                "value": 0.4,
+                "result_text": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title_area": "Area 3. Ecosistema tecnológico.",
+        "factor": 0.5,
+        "questions": [
+          {
+            "title": "Actualidad",
+            "id": 1,
+            "label": "¿Representa la tecnología desarrollada un hito frente a la tecnología actual?",
+            "options": [
+              {
+                "id": 1,
+                "label": "Si",
+                "value": 1,
+                "result_text": ""
+              },
+              {
+                "id": 2,
+                "label": "No",
+                "value": 2,
+                "result_text": ""
+              },
+              {
+                "id": 3,
+                "label": "No lo se",
+                "value": 0.4,
+                "result_text": ""
+              }
+            ]
+          },
+          {
+            "title": "Disponibilidad",
+            "id": 2,
+            "label": "¿Está disponible en la actualidad todos los habilitadores tecnológicos para el producto que se esta desarrollando?",
+            "options": [
+              {
+                "id": 1,
+                "label": "Si",
+                "value": 1,
+                "result_text": ""
+              },
+              {
+                "id": 2,
+                "label": "No",
+                "value": 2,
+                "result_text": ""
+              },
+              {
+                "id": 3,
+                "label": "No lo se",
+                "value": 0.4,
+                "result_text": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title_area": "Area 4. Ecosistema tecnológico.",
+        "factor": 0.5,
+        "questions": [
+          {
+            "title": "Actualidad",
+            "id": 1,
+            "label": "¿Representa la tecnología desarrollada un hito frente a la tecnología actual?",
+            "options": [
+              {
+                "id": 1,
+                "label": "Si",
+                "value": 1,
+                "result_text": ""
+              },
+              {
+                "id": 2,
+                "label": "No",
+                "value": 2,
+                "result_text": ""
+              },
+              {
+                "id": 3,
+                "label": "No lo se",
+                "value": 0.4,
+                "result_text": ""
+              }
+            ]
+          },
+          {
+            "title": "Disponibilidad",
+            "id": 2,
+            "label": "¿Está disponible en la actualidad todos los habilitadores tecnológicos para el producto que se esta desarrollando?",
+            "options": [
+              {
+                "id": 1,
+                "label": "Si",
+                "value": 1,
+                "result_text": ""
+              },
+              {
+                "id": 2,
+                "label": "No",
+                "value": 2,
+                "result_text": ""
+              },
+              {
+                "id": 3,
+                "label": "No lo se",
+                "value": 0.4,
+                "result_text": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title_area": "Area 5. Ecosistema tecnológico.",
+        "factor": 0.5,
+        "questions": [
+          {
+            "title": "Actualidad",
+            "id": 1,
+            "label": "¿Representa la tecnología desarrollada un hito frente a la tecnología actual?",
+            "options": [
+              {
+                "id": 1,
+                "label": "Si",
+                "value": 1,
+                "result_text": ""
+              },
+              {
+                "id": 2,
+                "label": "No",
+                "value": 2,
+                "result_text": ""
+              },
+              {
+                "id": 3,
+                "label": "No lo se",
+                "value": 0.4,
+                "result_text": ""
+              }
+            ]
+          },
+          {
+            "title": "Disponibilidad",
+            "id": 2,
+            "label": "¿Está disponible en la actualidad todos los habilitadores tecnológicos para el producto que se esta desarrollando?",
+            "options": [
+              {
+                "id": 1,
+                "label": "Si",
+                "value": 1,
+                "result_text": ""
+              },
+              {
+                "id": 2,
+                "label": "No",
+                "value": 2,
+                "result_text": ""
+              },
+              {
+                "id": 3,
+                "label": "No lo se",
+                "value": 0.4,
+                "result_text": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title_area": "Area 6. Ecosistema tecnológico.",
+        "factor": 0.5,
+        "questions": [
+          {
+            "title": "Actualidad",
+            "id": 1,
+            "label": "¿Representa la tecnología desarrollada un hito frente a la tecnología actual?",
+            "options": [
+              {
+                "id": 1,
+                "label": "Si",
+                "value": 1,
+                "result_text": ""
+              },
+              {
+                "id": 2,
+                "label": "No",
+                "value": 2,
+                "result_text": ""
+              },
+              {
+                "id": 3,
+                "label": "No lo se",
+                "value": 0.5,
+                "result_text": ""
+              }
+            ]
+          },
+          {
+            "title": "Disponibilidad",
+            "id": 2,
+            "label": "¿Está disponible en la actualidad todos los habilitadores tecnológicos para el producto que se esta desarrollando?",
+            "options": [
+              {
+                "id": 1,
+                "label": "Si",
+                "value": 1,
+                "result_text": ""
+              },
+              {
+                "id": 2,
+                "label": "No",
+                "value": 2,
+                "result_text": ""
+              },
+              {
+                "id": 3,
+                "label": "No lo se",
+                "value": 0.4,
+                "result_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

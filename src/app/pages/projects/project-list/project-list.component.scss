@@ -1,0 +1,132 @@
+.projectsList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table {
+    margin: 10px 0px;
+    width: 80%;
+}
+
+
+.creat{
+    margin: 20px auto 10px;
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+}
+.creat h2{
+    margin: 0px;
+}
+.creat button:hover{
+    background-color: rgb(41, 90, 223);
+}
+
+.listTable{
+    background-color: aliceblue;
+    color: #515151 !important;
+}
+.th, .mat-cell{
+    color: #515151 !important;
+}
+.mat-header-cell{
+    color: #515151 !important;
+    font-weight: 600;
+}
+.fullScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+.searchbar .mat-form-field{
+    width: 100%;
+}
+
+
+
+.modal{
+    z-index: 99999999;
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.295);
+    height: 100vh;
+    width: 100vw;
+    form{
+        h2{
+            margin-bottom: 40px;
+        }
+        display: flex;
+        flex-direction: column;
+        padding: 25px 10px;
+    }
+    .summi{
+        min-width: 35%;
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        min-width: 33vw;
+    }
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+@media screen and (max-width: 768px){
+    .modal{
+        width: 100vw;
+    }   
+    .creat{
+        flex-direction: column;
+        gap: 7px;
+    }
+    .mat-cell{
+        font-size: 0.6rem;
+        text-align: center;
+        line-height: 0.55rem;
+    }
+    .mat-header-cell{
+        color: #515151 !important;
+        font-weight: 600;
+        font-size: 0.5rem;
+        line-height: 0.6rem;
+        text-align: center;
+    }
+    table {
+        margin: 10px 0px;
+        width: 96%;
+    }
+    th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+        padding-right: 5px !important;
+    }
+    th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+        padding-left: 5px !important;
+    }
+}
+
+
+.downButton{
+    background-color: #afafaf2e;
+    cursor: pointer;
+    border-radius: 7px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #0000004b;
+}
+
+

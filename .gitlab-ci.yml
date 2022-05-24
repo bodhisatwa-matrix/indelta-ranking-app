@@ -1,0 +1,65 @@
+image: docker:20.10.12-alpine3.15
+
+variables:
+  DOCKER_DRIVER: overlay
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_TLS_CERTDIR: ""
+
+services:
+  - name: docker:20.10.12-dind-alpine3.15
+    alias: docker
+    command: ["--tls=false"]
+
+cache: 
+  key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+  paths:
+    - node_modules/
+  policy: pull
+
+before_script:
+  - apk add --no-cache docker-compose
+  - apk add --no-cache httpie 
+
+stages:
+  - test
+  - deploy
+
+test_async:
+  stage: test
+  script:
+   - docker network create srp-api-net
+   - docker-compose up --build --force-recreate -d --remove-orphans
+   - docker-compose ps
+   - sleep 3
+   - http GET docker:${PORT}/
+  tags:
+    - docker
+
+##Deployment Stage
+#I used an ubuntu base image because I had problems installing an SSH agent
+#to login to the deployment server and run the application  
+deploy:
+  stage: deploy
+  image: ubuntu:18.04
+  only:
+    - "master" #Only take code from the master branch
+    - "main"
+  environment: production
+  tags:
+    - docker
+  services:
+    - docker:20.10.12-dind-alpine3.15
+  before_script: #SSH login and verification
+    - mkdir -p ~/.ssh
+    - echo "${DEPLOYMENT_PRIVATE_KEY}" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa
+    - ssh-keyscan -H ${DEPLOYMENT_SERVER_HOST} >> ~/.ssh/known_hosts
+  
+  script: 
+    - ssh root@${DEPLOYMENT_SERVER_HOST} "cd /srv; [ ! -d ${CI_PROJECT_NAME} ] && git clone git@dpf.ubiquotechs.com:${CI_PROJECT_PATH}.git || true"
+    - ssh root@${DEPLOYMENT_SERVER_HOST} "cd /srv/${CI_PROJECT_NAME}; git pull || (cd /srv && rm -rf $CI_PROJECT_NAME && git clone git@dpf.ubiquotechs.com:${CI_PROJECT_PATH}.git)"
+    - ssh root@${DEPLOYMENT_SERVER_HOST} "cd /srv/${CI_PROJECT_NAME}; PORT=${PORT} DEPLOYMENT_INTERNAL_ADDRESS=${DEPLOYMENT_INTERNAL_ADDRESS} docker-compose up --build --force-recreate -d --remove-orphans"
+

@@ -1,0 +1,77 @@
+
+.mat-radio-label {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    white-space: normal !important;
+    vertical-align: middle;
+    width: 100%;
+}
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@media screen and (max-width: 768px){
+    .mat-horizontal-stepper-header-container {
+        white-space: nowrap;
+        display: flex;
+        align-items: flex-start !important;
+        //flex-direction: column !important;
+    }
+    
+    .mat-horizontal-stepper-header {
+        transform: scale(1.1);
+        /* padding: 0 1px 0px 0px !important; */
+        width: 110px;
+        display: flex !important;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .mat-stepper-horizontal-line {
+        border-top-width: 1px;
+        border-top-style: solid;
+        flex: auto;
+        height: 0;
+        margin: 0 -16px;
+        min-width: 1px !important;
+        width: 0px;
+    }
+    .mat-step-icon{
+        height: 12px !important;
+        width: 12px !important;
+    }
+    .mat-horizontal-stepper-header .mat-step-icon {
+        margin-right: 3px;
+        flex: none;
+        font-size: 10px;
+    }
+    .mat-horizontal-stepper-header {
+        padding: 0 0px !important;
+    }
+    .mat-step-header {
+        transform: scale(0.85);
+    }
+    .mat-horizontal-stepper-header {
+        padding: 0 1px 0px 0px !important;
+        width: 190px;
+    }
+}
+
+.mat-stepper-horizontal-line {
+    border-top-width: 1px;
+    border-top-style: solid;
+    flex: auto;
+    height: 0;
+    margin: 0 -16px;
+    min-width: 1px !important;
+    width: 0px;
+}
+
+#innersRadios .mat-radio-container{
+    opacity: 0% !important;
+    display: none !important;
+}

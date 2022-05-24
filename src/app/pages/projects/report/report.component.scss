@@ -1,0 +1,234 @@
+.example-stepper {
+    margin-top: 8px;
+}
+.actualforms{
+    padding-bottom: 10px;
+}
+.mat-form-field {
+    margin-top: 16px;
+}
+.startLeft{
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.subHeader{
+    padding: 10px 2%;
+    // color: white;
+    background-color: #dddddd;
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2{
+        white-space: nowrap;
+        margin: 0px;
+    }
+}
+.createForm{
+    flex-direction: column;
+    background-color: rgb(221, 221, 221);
+    min-height: 91vh;
+    display: flex;
+    align-items: center;
+}
+.hrd{
+    margin: 0px;
+}
+.example-stepper form{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.example-stepper{
+    width: 75%;
+    margin-top: 3vh;
+    border-radius: 10px;
+    /* background-color: #2b79ff; */
+}
+.radioOptions{
+    display: flex;
+    flex-direction: column;
+}
+.stepChanger{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.formFielsds{
+    display: flex;
+    flex-direction: column;
+    min-height: 43vh;
+}
+.radioOptions{
+    margin: 0px 0px 10px !important;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.radioOptions h3{
+    font-weight: 600;
+    margin: 10px 0px 0px;
+}
+/*
+.stepChanger button.prev{
+    color: white;
+    border: solid white 2px;
+    border-radius: 10px;
+}
+.stepChanger button.next{
+    background: white;
+    border-radius: 10px;
+}
+*/
+.example-spacer{
+    width: 100%;
+}
+.d-flex{
+    white-space: nowrap;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+}
+.d-flex h2, .d-flex p{
+    margin: 0px;
+}
+.startLeft{
+    padding: 0px 0px !important;
+}
+.butons{
+    display: flex;
+    gap: 10px
+}
+.summitbot{
+    color: white;
+    background-color: #4eb53f;
+}
+
+.questionsx h3{
+    font-weight: 500;
+}
+
+.questionsx h2{
+    font-size: 16px;
+    margin: 10px 0px;
+    font-weight: 700;
+}
+
+.mat-horizontal-stepper-header {
+    display: flex;
+    height: 72px;
+    overflow: initial !important;
+    text-overflow: ellipsis;
+    align-items: center;
+    padding: 0 15px;
+}
+
+p.pTitle{
+    margin: 0px;
+    //width: 69px;
+    display: flex;    
+    overflow: hidden;
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    align-items: center;
+}
+
+.subHeader{
+    overflow: auto;
+}
+
+@media screen and (max-width: 768px){
+    .example-stepper{
+        width: 90%;
+    }
+    p.pTitle{
+        font-size: 10px !important;
+        margin: 0px;
+        display: flex;
+        overflow: hidden;
+        line-height: 14px;
+        white-space: pre-wrap !important;
+        text-overflow: ellipsis;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        align-items: center;
+    }
+}
+
+.mat-form-field{
+    width: 50vw !important;
+}
+
+
+
+
+@media screen and (max-width: 968px){
+    p.pTitle{
+        font-size: 10px;
+    }
+}
+
+
+.preguntaPorLinea{
+    display: flex;
+    justify-content: space-between;
+    .innerValues{
+        margin: 0px 20px;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        width: 13vw;
+    }
+    p{
+        margin: 0px;
+        max-width: 45vw;
+    }
+}
+
+input, textarea{
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.mat-radio-button{
+    display: none;
+}
+.mat-radio-button.mat-radio-checked{
+    display: flex !important;
+}
+
+hr{
+    border: solid 0.1px #f0f0f0;
+    width: 100%;
+}
+
+.reportTitle{
+    text-align: center;
+    font-weight: 600;
+    h2{
+        margin: 0px;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    h5{
+        margin-top: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    h4{
+        margin: 5px 0px;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    h3{
+        margin: 7px 0px;
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+}

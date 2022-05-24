@@ -1,0 +1,5 @@
+{
+    "KEYCLOAK_URL": "https://api.ubox.world",
+    "KEYCLOAK_REALM": "indelta",
+    "KEYCLOAK_CLIENT_ID": "indelta-app"
+}

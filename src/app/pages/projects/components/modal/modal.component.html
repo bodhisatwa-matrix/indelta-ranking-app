@@ -1,0 +1,23 @@
+<div class="modal" *ngIf="isOpen">
+    <mat-card
+        class="example-stepper"
+    >
+        <form [formGroup]="projectForm" (ngSubmit)="createProject()">
+            <h2>
+                Nueva startup
+            </h2>
+            <div class="formFielsds">
+                <p class="inputPlace">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Nombre de empresa</mat-label>
+                        <input class="summi" matInput formControlName="name" required>
+                    </mat-form-field>
+                  </p>
+            </div>
+            <div class="buttons">
+                <button (click)="open()" [disabled]="loading" class="summi" mat-raised-button>Cancelar</button>
+                <button type="submit" [disabled]="!projectForm.valid || loading" class="summi" mat-raised-button color="primary">Crear</button>
+            </div>
+        </form>
+    </mat-card>
+</div>
