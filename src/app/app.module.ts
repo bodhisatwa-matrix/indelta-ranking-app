@@ -14,6 +14,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { RequestService } from './request.service';
 import { MatButtonModule } from '@angular/material/button';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
 
 /** End **/
 @NgModule({
@@ -25,14 +30,19 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    DragDropModule,
+    MatProgressSpinnerModule,
+    MatExpansionModule,
+    MatSelectModule,
     MatToolbarModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatTabsModule,
   ],
   providers: [RequestService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

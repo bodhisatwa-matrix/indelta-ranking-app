@@ -1,6 +1,10 @@
 <mat-toolbar color="primary"></mat-toolbar>
-<div>
-  <form [formGroup]="configForm" (ngSubmit)="onSubmit()">
+<div class="main">
+  <div class="wrapper" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+    <span>{{loadingText}}</span>
+  </div>
+  <form [formGroup]="configForm" (ngSubmit)="onSubmit()" *ngIf="!loading">
     <mat-card>
       <mat-card-title>Test Configuration</mat-card-title>
       <mat-card-content>
@@ -22,109 +26,164 @@
         </mat-form-field>
       </mat-card-content>
       <mat-card-subtitle>Areas</mat-card-subtitle>
-      <mat-card-content>
-        <ng-container formArrayName="areas">
-          <ng-container *ngFor="let area of areas.controls; let i = index">
-            <div [formGroupName]="i" class="area">
-              <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Area Id</mat-label>
-                <input matInput placeholder="enter id" formControlName="id">
-              </mat-form-field>
-              <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Area Title</mat-label>
-                <input matInput placeholder="enter area title" formControlName="title_area">
-              </mat-form-field>
-              <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Area Factor</mat-label>
-                <input matInput placeholder="enter area factor" formControlName="factor">
-              </mat-form-field>
-              <div class="area">
-                <h2>Sub Area</h2>
-                <button (click)="addSubArea(i)">Add Sub Area</button>
-              </div>
-              <div>
-                <h5>Area</h5>
-                <select>
-                  <option *ngFor="let a of areaList" value="{{a.id}}" [selected]="a.id == i">{{a.title_area}}</option>
-                </select>
-              </div>
-              <ng-container formArrayName="subAreas">
-                <ng-container *ngFor="let sub of getSubAreas(i).controls; let j = index">
-                  <div [formGroupName]="j" class="area">
-                    <mat-form-field class="full-width" appearance="outline">
-                      <mat-label>Sub Area Id</mat-label>
-                      <input matInput placeholder="enter sub area id" formControlName="sub_id">
-                    </mat-form-field>
-                    <mat-form-field class="full-width" appearance="outline">
-                      <mat-label>Sub Area Title</mat-label>
-                      <input matInput placeholder="enter sub area title" formControlName="sub_area_title">
-                    </mat-form-field>
+      <mat-card-content class="areas">
+        <ng-container formArrayName="area_test">
+          <mat-tab-group animationDuration="1000ms">
+            <ng-container *ngFor="let area of area_test.controls; let i = index">
+              <mat-tab label="{{area.value['title_area']}}" [formGroupName]="i" class="area">
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Area Id</mat-label>
+                  <input matInput placeholder="enter id" formControlName="id">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Area Title</mat-label>
+                  <input matInput placeholder="enter area title" formControlName="title_area">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Area Factor</mat-label>
+                  <input matInput placeholder="enter area factor" formControlName="factor">
+                </mat-form-field>
+                <mat-accordion>
+                  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>SubAreas</mat-expansion-panel-header>
                     <div class="area">
-                      <h3>Questions:</h3>
-                      <button (click)="addQuestions(i, j)">Add question</button>
-                      <ng-container formArrayName="questions">
-                        <ng-container *ngFor="let qus of getQuestions(i, j).controls; let k=index">
-                          <div [formGroupName]="k" class="area">
-                            <mat-form-field class="full-width" appearance="outline">
-                              <mat-label>Question Id</mat-label>
-                              <input matInput placeholder="enter id" formControlName="id">
-                            </mat-form-field>
-                            <mat-form-field class="full-width" appearance="outline">
-                              <mat-label>Question Title</mat-label>
-                              <input matInput placeholder="enter question title" formControlName="title">
-                            </mat-form-field>
-                            <mat-form-field class="full-width" appearance="outline">
-                              <mat-label>Question Label</mat-label>
-                              <input matInput placeholder="enter question label" formControlName="label">
-                            </mat-form-field>
-                            <div class="area">
-                              <h4>Options</h4>
-                              <button (click)="addOptions(i, j, k)">Add Options</button>
-                              <ng-container formArrayName="options">
-                                <ng-container *ngFor="let option of getOptions(i, j, k).controls; let l=index">
-                                  <div [formGroupName]="l" class="area">
-                                    <mat-form-field class="full-width" appearance="outline">
-                                      <mat-label>Option Id</mat-label>
-                                      <input matInput placeholder="enter id" formControlName="id">
-                                    </mat-form-field>
-                                    <mat-form-field class="full-width" appearance="outline">
-                                      <mat-label>Label</mat-label>
-                                      <input matInput placeholder="enter option label" formControlName="label">
-                                    </mat-form-field>
-                                    <mat-form-field class="full-width" appearance="outline">
-                                      <mat-label>Option Value</mat-label>
-                                      <input type="number" matInput placeholder="enter option value" formControlName="value">
-                                    </mat-form-field>
-                                    <mat-form-field class="full-width" appearance="outline">
-                                      <mat-label>Result Text</mat-label>
-                                      <input matInput placeholder="enter result text" formControlName="result_text">
-                                    </mat-form-field>
-                                    <div>
-                                      <button (click)="removeOptions(i, j ,k)">remove option</button>
+                      <div class="container">
+                        <h2>Sub Area
+                          <button type="button" color="primary" mat-icon-button (click)="addSubArea(i)">
+                            <mat-icon>add_circle</mat-icon>
+                          </button>
+                        </h2>
+                      </div>
+                      <ng-container>
+                        <div class="container">
+                          <mat-form-field appearance="outline">
+                            <mat-label>Move to:</mat-label>
+                            <mat-select (selectionChange)="moveSubArea($event, i)">
+                              <mat-option *ngFor="let a of areaList" value="{{a.id}}">{{a.title_area}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                        <ng-container formArrayName="subAreas">
+                          <ng-container *ngFor="let sub of getSubAreas(i).controls; let j = index">
+                            <mat-card [formGroupName]="j" class="area test">
+                              <div class="form-fields">
+                                <mat-form-field class="full-width" appearance="outline">
+                                  <mat-label>Sub Area Id</mat-label>
+                                  <input matInput placeholder="enter sub area id" formControlName="sub_id">
+                                </mat-form-field>
+                                <mat-form-field class="full-width" appearance="outline">
+                                  <mat-label>Sub Area Title</mat-label>
+                                  <input matInput placeholder="enter sub area title" formControlName="sub_area_title">
+                                </mat-form-field>
+                                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                  <mat-expansion-panel-header>Questions</mat-expansion-panel-header>
+                                  <div class="area">
+                                    <div class="container">
+                                      <h3>Questions:
+                                        <button type="button" mat-icon-button color="primary"
+                                          (click)="addQuestions(i, j)">
+                                          <mat-icon>add_circle</mat-icon>
+                                        </button>
+                                      </h3>
                                     </div>
+                                    <ng-container formArrayName="questions">
+                                      <ng-container *ngFor="let qus of getQuestions(i, j).controls; let k=index">
+                                        <mat-card [formGroupName]="k" class="area test">
+                                          <div class="form-fields">
+                                            <mat-form-field class="full-width" appearance="outline">
+                                              <mat-label>Question Id</mat-label>
+                                              <input matInput placeholder="enter id" formControlName="id">
+                                            </mat-form-field>
+                                            <mat-form-field class="full-width" appearance="outline">
+                                              <mat-label>Question Title</mat-label>
+                                              <input matInput placeholder="enter question title"
+                                                formControlName="title">
+                                            </mat-form-field>
+                                            <mat-form-field class="full-width" appearance="outline">
+                                              <mat-label>Question Label</mat-label>
+                                              <input matInput placeholder="enter question label"
+                                                formControlName="label">
+                                            </mat-form-field>
+                                            <mat-expansion-panel (opened)="panelOpenState = true"
+                                              (closed)="panelOpenState = false">
+                                              <mat-expansion-panel-header>Options</mat-expansion-panel-header>
+                                              <div class="area">
+                                                <div class="container">
+                                                  <h4>Options
+                                                    <button type="button" mat-icon-button color="primary"
+                                                      (click)="addOptions(i, j, k)">
+                                                      <mat-icon>add_circle</mat-icon>
+                                                    </button>
+                                                  </h4>
+                                                </div>
+                                                <ng-container formArrayName="options">
+                                                  <ng-container
+                                                    *ngFor="let option of getOptions(i, j, k).controls; let l=index">
+                                                    <mat-card [formGroupName]="l" class="area test">
+                                                      <div class="form-fields">
+                                                        <mat-form-field class="full-width" appearance="outline">
+                                                          <mat-label>Option Id</mat-label>
+                                                          <input matInput placeholder="enter id" formControlName="id">
+                                                        </mat-form-field>
+                                                        <mat-form-field class="full-width" appearance="outline">
+                                                          <mat-label>Label</mat-label>
+                                                          <input matInput placeholder="enter option label"
+                                                            formControlName="label">
+                                                        </mat-form-field>
+                                                        <mat-form-field class="full-width" appearance="outline">
+                                                          <mat-label>Option Value</mat-label>
+                                                          <input type="number" matInput placeholder="enter option value"
+                                                            formControlName="value">
+                                                        </mat-form-field>
+                                                        <mat-form-field class="full-width" appearance="outline">
+                                                          <mat-label>Result Text</mat-label>
+                                                          <input matInput placeholder="enter result text"
+                                                            formControlName="result_text">
+                                                        </mat-form-field>
+                                                      </div>
+                                                      <div>
+                                                        <button type="button" (click)="removeOptions(i, j ,k)"
+                                                          mat-icon-button color="accent">
+                                                          <mat-icon>delete</mat-icon>
+                                                        </button>
+                                                      </div>
+                                                    </mat-card>
+                                                  </ng-container>
+                                                </ng-container>
+                                              </div>
+                                            </mat-expansion-panel>
+                                          </div>
+                                          <div>
+                                            <button type="button" (click)="removeQuestions(i,j)" mat-icon-button
+                                              color="accent">
+                                              <mat-icon>delete</mat-icon>
+                                            </button>
+                                          </div>
+                                        </mat-card>
+                                      </ng-container>
+                                    </ng-container>
                                   </div>
-                                </ng-container>
-                              </ng-container>
-                            </div>
-                            <div>
-                              <button (click)="removeQuestions(i,j)">remove question</button>
-                            </div>
-                          </div>
+                                </mat-expansion-panel>
+                              </div>
+                              <div>
+                                <button mat-icon-button color="accent" type="button" (click)="removeSubArea(i,j)">
+                                  <mat-icon>delete</mat-icon>
+                                </button>
+                              </div>
+                            </mat-card>
+                          </ng-container>
                         </ng-container>
                       </ng-container>
                     </div>
-                    <div>
-                      <button (click)="removeSubArea(i,j)">remove subArea</button>
-                    </div>
-                  </div>
-                </ng-container>
-              </ng-container>
-            </div>
-          </ng-container>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </mat-tab>
+            </ng-container>
+          </mat-tab-group>
         </ng-container>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary">Download Configuration</button>
+        <button mat-raised-button type="submit" color="primary">Download Configuration</button>
       </mat-card-actions>
     </mat-card>
   </form>
