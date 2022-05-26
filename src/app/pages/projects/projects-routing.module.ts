@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreateConfigComponent } from './create-config/create-config.component';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ProjectListComponent } from './project-list/project-list.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"resultados/:id", component: TestResultsComponent},
   {path:"report/:id", component: ReportComponent},
   {path:"charts/:id", component: SpiderChartComponent},
+  {path:"config", component: CreateConfigComponent},
   {
     path: "**",
     redirectTo: ""
@@ -25,5 +27,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class ProjectsRoutingModule {
-  
+
 }

@@ -16,6 +16,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import { SpiderChartComponent } from './spider-chart/spider-chart.component';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { ReportComponent } from './report/report.component';
+import { CreateConfigComponent } from './create-config/create-config.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReportComponent } from './report/report.component';
     PoperComponent,
     AlertComponent,
     SpiderChartComponent,
-    ReportComponent
+    ReportComponent,
+    CreateConfigComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,212 @@
+<app-header></app-header>
+<div class="main">
+  <div class="wrapper" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+    <span>{{loadingText}}</span>
+  </div>
+  <form [formGroup]="configForm" (ngSubmit)="onSubmit()" *ngIf="!loading">
+    <mat-card>
+      <mat-card-title>Test Configuration</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Id</mat-label>
+          <input matInput placeholder="enter id" formControlName="id">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Test Name</mat-label>
+          <input matInput placeholder="enter name_test" formControlName="name_test">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea matInput placeholder="enter description" formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Text Result</mat-label>
+          <textarea matInput placeholder="enter text_result" formControlName="text_result"></textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-subtitle>Areas</mat-card-subtitle>
+      <mat-card-content class="areas">
+        <ng-container formArrayName="area_test">
+          <mat-tab-group animationDuration="1000ms">
+            <ng-container *ngFor="let area of area_test.controls; let i = index">
+              <mat-tab label="{{area.value['title_area']}}" [formGroupName]="i" class="area">
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Area Id</mat-label>
+                  <input matInput placeholder="enter id" formControlName="id">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Area Title</mat-label>
+                  <input matInput placeholder="enter area title" formControlName="title_area">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Area Factor</mat-label>
+                  <input matInput placeholder="enter area factor" formControlName="factor">
+                </mat-form-field>
+                <mat-accordion>
+                  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>SubAreas</mat-expansion-panel-header>
+                    <div class="area">
+                      <div class="container">
+                        <h2>Sub Area
+                          <button type="button" color="primary" mat-icon-button (click)="addSubArea(i)">
+                            <mat-icon>add_circle</mat-icon>
+                          </button>
+                        </h2>
+                      </div>
+                      <ng-container>
+                        <div class="container">
+                          <mat-form-field appearance="outline">
+                            <mat-label>Move to:</mat-label>
+                            <mat-select (selectionChange)="moveSubArea($event, i)">
+                              <mat-option *ngFor="let a of areaList" value="{{a.id}}">{{a.title_area}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                        <ng-container formArrayName="subAreas">
+                          <ng-container *ngFor="let sub of getSubAreas(i).controls; let j = index">
+                            <mat-card [formGroupName]="j" class="area test">
+                              <div class="form-fields">
+                                <mat-form-field class="full-width" appearance="outline">
+                                  <mat-label>Sub Area Id</mat-label>
+                                  <input matInput placeholder="enter sub area id" formControlName="sub_id">
+                                </mat-form-field>
+                                <mat-form-field class="full-width" appearance="outline">
+                                  <mat-label>Sub Area Title</mat-label>
+                                  <input matInput placeholder="enter sub area title" formControlName="sub_area_title">
+                                </mat-form-field>
+                                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                  <mat-expansion-panel-header>Questions</mat-expansion-panel-header>
+                                  <div class="area">
+                                    <div class="container">
+                                      <h3>Questions:
+                                        <button type="button" mat-icon-button color="primary"
+                                          (click)="addQuestions(i, j)">
+                                          <mat-icon>add_circle</mat-icon>
+                                        </button>
+                                      </h3>
+                                    </div>
+                                    <ng-container formArrayName="questions">
+                                      <ng-container *ngFor="let qus of getQuestions(i, j).controls; let k=index">
+                                        <mat-card [formGroupName]="k" class="area">
+                                          <ng-container>
+                                            <button color="primary" mat-raised-button [matMenuTriggerFor]="menu" type="button">Move To</button>
+                                            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                                              <ng-container *ngFor="let item of areaListDrop; let areaIndex=index;">
+                                                <button mat-menu-item [matMenuTriggerFor]="sub_menu" type="button">
+                                                  {{ item.title_area }}
+                                                </button>
+                                                <mat-menu #sub_menu="matMenu">
+                                                  <ng-container *ngFor="let sub of item.subAreas; let subIndex=index;">
+                                                    <ng-container *ngIf="subIndex != j">
+                                                      <button mat-menu-item (click)="moveQuestion(areaIndex, subIndex, {i, j ,k})" type="button">
+                                                        {{ sub.sub_area_title }}
+                                                      </button>
+                                                    </ng-container>
+                                                  </ng-container>
+                                                </mat-menu>
+                                              </ng-container>
+                                            </mat-menu>
+                                          </ng-container>
+                                          <div class="test">
+                                            <div class="form-fields">
+                                              <mat-form-field class="full-width" appearance="outline">
+                                                <mat-label>Question Id</mat-label>
+                                                <input matInput placeholder="enter id" formControlName="id">
+                                              </mat-form-field>
+                                              <mat-form-field class="full-width" appearance="outline">
+                                                <mat-label>Question Title</mat-label>
+                                                <input matInput placeholder="enter question title"
+                                                  formControlName="title">
+                                              </mat-form-field>
+                                              <mat-form-field class="full-width" appearance="outline">
+                                                <mat-label>Question Label</mat-label>
+                                                <input matInput placeholder="enter question label"
+                                                  formControlName="label">
+                                              </mat-form-field>
+                                              <mat-expansion-panel (opened)="panelOpenState = true"
+                                                (closed)="panelOpenState = false">
+                                                <mat-expansion-panel-header>Options</mat-expansion-panel-header>
+                                                <div class="area">
+                                                  <div class="container">
+                                                    <h4>Options
+                                                      <button type="button" mat-icon-button color="primary"
+                                                        (click)="addOptions(i, j, k)">
+                                                        <mat-icon>add_circle</mat-icon>
+                                                      </button>
+                                                    </h4>
+                                                  </div>
+                                                  <ng-container formArrayName="options">
+                                                    <ng-container
+                                                      *ngFor="let option of getOptions(i, j, k).controls; let l=index">
+                                                      <mat-card [formGroupName]="l" class="area test">
+                                                        <div class="form-fields">
+                                                          <mat-form-field class="full-width" appearance="outline">
+                                                            <mat-label>Option Id</mat-label>
+                                                            <input matInput placeholder="enter id" formControlName="id">
+                                                          </mat-form-field>
+                                                          <mat-form-field class="full-width" appearance="outline">
+                                                            <mat-label>Label</mat-label>
+                                                            <input matInput placeholder="enter option label"
+                                                              formControlName="label">
+                                                          </mat-form-field>
+                                                          <mat-form-field class="full-width" appearance="outline">
+                                                            <mat-label>Option Value</mat-label>
+                                                            <input type="number" matInput placeholder="enter option value"
+                                                              formControlName="value">
+                                                          </mat-form-field>
+                                                          <mat-form-field class="full-width" appearance="outline">
+                                                            <mat-label>Result Text</mat-label>
+                                                            <input matInput placeholder="enter result text"
+                                                              formControlName="result_text">
+                                                          </mat-form-field>
+                                                        </div>
+                                                        <div>
+                                                          <button type="button" (click)="removeOptions(i, j ,k)"
+                                                            mat-icon-button color="accent">
+                                                            <mat-icon>delete</mat-icon>
+                                                          </button>
+                                                        </div>
+                                                      </mat-card>
+                                                    </ng-container>
+                                                  </ng-container>
+                                                </div>
+                                              </mat-expansion-panel>
+                                            </div>
+                                          </div>
+
+                                          <div>
+                                            <button type="button" (click)="removeQuestions(i,j)" mat-icon-button
+                                              color="accent">
+                                              <mat-icon>delete</mat-icon>
+                                            </button>
+                                          </div>
+                                        </mat-card>
+                                      </ng-container>
+                                    </ng-container>
+                                  </div>
+                                </mat-expansion-panel>
+                              </div>
+                              <div>
+                                <button mat-icon-button color="accent" type="button" (click)="removeSubArea(i,j)">
+                                  <mat-icon>delete</mat-icon>
+                                </button>
+                              </div>
+                            </mat-card>
+                          </ng-container>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </mat-tab>
+            </ng-container>
+          </mat-tab-group>
+        </ng-container>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button type="submit" color="primary">Download Configuration</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

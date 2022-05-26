@@ -6,22 +6,22 @@ import { KeycloakAuthGuard, KeycloakService } from 'keycloak-angular';
   providedIn: 'root'
 })
 export class AuthGuard extends KeycloakAuthGuard {
-  
+
   constructor(
     router: Router,
     protected readonly keycloak: KeycloakService
   ) {
     super(router, keycloak);
   }
-  
+
   async isAccessAllowed(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<boolean | UrlTree> {
-    
+
     if (!this.authenticated) {
       await this.keycloak.login({
-        //redirectUri: window.location.origin + state.url,
-        redirectUri: 'https://indelta-rating.ubiquotechs.com/#' + state.url,
+        redirectUri: window.location.origin + state.url,
+        // redirectUri: 'https://indelta-rating.ubiquotechs.com/#' + state.url,
         //redirectUri: 'http://localhost:4200/#' + state.url,
       });
     }

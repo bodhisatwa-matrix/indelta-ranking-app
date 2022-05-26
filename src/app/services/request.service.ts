@@ -10,6 +10,9 @@ import { Test } from '../model/interfaces/test.interface';
 import json from '../shared/object.json';
 import { HttpClient } from '@angular/common/http';
 
+/** New Added**/
+import { data, options, questions, subAreas } from '../model/interfaces/config.interface';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -102,8 +105,8 @@ export class RequestService {
   getUSer() {
     return this.fakeRequest(this.data.security.user);
   }
-    
-  
+
+
    AdapterAreas(area_test:any[]) {
     let value:any =  area_test.map(areaParent => ({
       id: areaParent.id,
@@ -119,12 +122,12 @@ export class RequestService {
      }))
      return value
  }
-  
+
 
  getSubAreaData(){
    console.log();
  }
-  
+
   getApiData(){
     return this.http.get("https://indelta-api.ubiquotechs.com/account/list")
   }
@@ -164,8 +167,13 @@ export class RequestService {
   updateProjects(projData: any){
     return this.http.put("https://indelta-api.ubiquotechs.com/projects", projData)
   }
-  
+
   completeTestProyect() {}
+
+  /** New Added **/
+  getTestInfoForConfig(){
+    return this.http.get<data>("https://indelta-api.ubiquotechs.com/test-info")
+  }
 }
 
 // model
