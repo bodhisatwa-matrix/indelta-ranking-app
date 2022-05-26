@@ -60,3 +60,7 @@
   padding: 1em;
   width: 95%;
 }
+
+::ng-deep .mat-form-field.ng-dirty > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-outline {
+  color: red;
+}
