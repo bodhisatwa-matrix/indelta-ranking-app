@@ -20,8 +20,8 @@ export class AuthGuard extends KeycloakAuthGuard {
 
     if (!this.authenticated) {
       await this.keycloak.login({
-        redirectUri: window.location.origin + state.url,
-        // redirectUri: 'https://indelta-rating.ubiquotechs.com/#' + state.url,
+        // redirectUri: window.location.origin + state.url,
+        redirectUri: 'https://indelta-rating.ubiquotechs.com/#' + state.url,
         //redirectUri: 'http://localhost:4200/#' + state.url,
       });
     }
