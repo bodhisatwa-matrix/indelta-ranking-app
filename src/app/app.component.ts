@@ -9,9 +9,26 @@ interface areaDropDown {
   id: number,
   title_area: string
 }
-interface subAreaDropDown {}
-interface questionsDropDown {}
-interface optionsDropDown {}
+interface areaDrop {
+  id: number,
+  title_area: string,
+  subAreas: subAreaDropDown[]
+}
+interface subAreaDropDown {
+  sub_id: number,
+  sub_area_title: string
+  questions: questionsDropDown[]
+}
+interface questionsDropDown {
+  id: number,
+  title: string,
+  options: optionsDropDown[]
+}
+interface optionsDropDown {
+  id: number,
+  label: string
+}
+
 
 @Component({
   selector: 'app-root',
@@ -25,6 +42,7 @@ export class AppComponent implements OnInit{
   configData?: data;
   configForm: FormGroup = new FormGroup({});
   areaList: areaDropDown[] = [];
+  areaListDrop: areaDrop[] = [];
   subAreaList: subAreaDropDown[] = [];
   questionList: questionsDropDown[] = [];
   optionsList: optionsDropDown[] = [];
@@ -68,9 +86,10 @@ export class AppComponent implements OnInit{
     this.service.getConfig().subscribe(res => {
       this.configData = res;
       this.areaList = res.area_test.map((data) => ({"id":data.id, "title_area":data.title_area}));
+      this.areaListDrop = res.area_test.map((data) => ({"id":data.id, "title_area":data.title_area, "subAreas": data.subAreas}));
       this.patchConfigForm(this.configData);
     });
-    
+
   }
   /** Getters **/
   get id() {
@@ -222,7 +241,6 @@ export class AppComponent implements OnInit{
     }
   }
   moveSubArea(event: any, currentIndex) {
-    console.log("hi", event.value)
     let areaId = event.value;
     if(areaId != currentIndex) {
       let fromSubArea = this.configForm.value.area_test[currentIndex];
@@ -245,5 +263,11 @@ export class AppComponent implements OnInit{
       this.loading = false;
     }, 10);
   }
-  
+  moveQuestion(areaIndex, subIndex, question) {
+    let data = this.configForm.value.area_test[question.i]['subAreas'][question.j]['questions'][question.k];
+    this.configForm.value["area_test"][areaIndex]['subAreas'][subIndex]['questions'].push(data);
+    this.configForm.value.area_test[question.i]['subAreas'][question.j]['questions'].splice(question.k, 1);
+    this.patchConfigForm(this.configForm.value);
+    this.areaListDrop = this.configForm.value.area_test.map((data) => ({"id":data.id, "title_area":data.title_area, "subAreas": data.subAreas}));
+  }
 }
