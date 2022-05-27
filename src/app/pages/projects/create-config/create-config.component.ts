@@ -265,7 +265,7 @@ export class CreateConfigComponent implements OnInit {
   str = "";
   tab = 0;
   i = 0;
-  generateData(data, t, j) {
+  generateData(data: any, t:number, j: number) {
       Object.keys(data).forEach(key => {
           if (Array.isArray(data[key])) {
             this.tab += 30;
@@ -281,17 +281,17 @@ export class CreateConfigComponent implements OnInit {
           }
       });
   }
-  camelize(text) {
+  camelize(text:string) {
       text = text.replace(/[-_\s.]+(.)?/g, (_, c) => c ? c.toUpperCase() : '');
       return text.substr(0, 1).toUpperCase() + text.substr(1);
   }
   printJson() {
     this.generateData(this.configForm.value, this.tab, this.i);
-    let x=window.open();
-    x.document.open();
-    x.document.write(this.str);
-    x.print();
-    x.document.close();
-    x.close();
+    let x = window.open();
+    x?.document.open();
+    x?.document.write(this.str);
+    x?.print();
+    x?.document.close();
+    x?.close();
   }
 }
