@@ -262,4 +262,36 @@ export class CreateConfigComponent implements OnInit {
     this.patchConfigForm(this.configForm.value);
     this.areaListDrop = this.configForm.value.area_test.map((data:any) => ({"id":data.id, "title_area":data.title_area, "subAreas": data.subAreas}));
   }
+  str = "";
+  tab = 0;
+  i = 0;
+  generateData(data, t, j) {
+      Object.keys(data).forEach(key => {
+          if (Array.isArray(data[key])) {
+            this.tab += 30;
+              this.i++;
+              this.str += `<h${this.i} style="padding-left: ${t}px">${this.camelize(key)} :</h${this.i}>`;
+              for (const d of data[key]) {
+                  this.generateData(d, this.tab, this.i);
+              }
+              this.tab = t;
+              this.i = j;
+          } else {
+              this.str += `<div style="padding-left: ${this.tab}px;"><div>${this.camelize(key)} : <span>${data[key]}</span></div></div>`;
+          }
+      });
+  }
+  camelize(text) {
+      text = text.replace(/[-_\s.]+(.)?/g, (_, c) => c ? c.toUpperCase() : '');
+      return text.substr(0, 1).toUpperCase() + text.substr(1);
+  }
+  printJson() {
+    this.generateData(this.configForm.value, this.tab, this.i);
+    let x=window.open();
+    x.document.open();
+    x.document.write(this.str);
+    x.print();
+    x.document.close();
+    x.close();
+  }
 }
