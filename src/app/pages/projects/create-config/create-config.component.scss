@@ -58,7 +58,27 @@
   padding: 1em;
   width: 95%;
 }
-
 ::ng-deep .mat-form-field.ng-dirty > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-outline {
   color: red;
 }
+@media (max-width: 768px) {
+  .full-width {
+    width: 95%;
+  }
+  .area {
+    margin: 2px !important;
+    border: 1px solid rgb(240, 240, 240);
+  }
+  .main {
+    margin: 0.5em !important;
+    padding: 0.5em !important;
+  }
+  ::ng-deep .mat-expansion-panel-body {
+    padding: 0px !important;
+  }
+  ::ng-deep .mat-card {
+    padding: 2px !important;
+  }
+  ::ng-deep .form-fields {
+    padding: 0px !important;
+  }
