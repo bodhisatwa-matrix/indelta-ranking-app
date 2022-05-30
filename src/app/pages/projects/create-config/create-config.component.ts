@@ -118,7 +118,7 @@ export class CreateConfigComponent implements OnInit {
     const control = (<FormArray> this.configForm.controls['area_test']).at(index).get('subAreas') as FormArray;
     const subArea = this.builder.group({
       sub_area_title: [],
-      sub_id: [],
+      sub_id: [control.length],
       questions: this.builder.array([])
     });
     control.push(subArea);
@@ -131,7 +131,7 @@ export class CreateConfigComponent implements OnInit {
   addQuestions(areaIndex: number, subAreaIndex: number) {
     const control = ((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).at(subAreaIndex).get('questions') as FormArray;
     const question = this.builder.group({
-      id: [],
+      id: [control.length ? control?.at(control.length -1)?.get('id')?.value + 1 : 0],
       title: [],
       label: [],
       options: this.builder.array([])
@@ -139,14 +139,14 @@ export class CreateConfigComponent implements OnInit {
     control.push(question);
   }
   /** Remove Questions from From **/
-  removeQuestions(areaIndex: number, subAreaIndex: number) {
-    ((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).removeAt(subAreaIndex);
+  removeQuestions(areaIndex: number, subAreaIndex: number, qusIndex: number) {
+    (((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).at(subAreaIndex).get('questions') as FormArray).removeAt(qusIndex);
   }
   /** Add Options **/
   addOptions(areaIndex: number, subAreaIndex: number, qusIndex: number) {
     const control = (((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).at(subAreaIndex).get('questions') as FormArray).at(qusIndex).get('options') as FormArray;
     const options = this.builder.group({
-      id: [],
+      id: [control.length ? control?.at(control.length -1)?.get('id')?.value + 1 : 0],
       label: [],
       value: [],
       result_text: []
@@ -154,8 +154,8 @@ export class CreateConfigComponent implements OnInit {
     control.push(options);
   }
   /** Remove Options from Questions **/
-  removeOptions(areaIndex: number, subAreaIndex: number, qusIndex: number) {
-    (((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).at(subAreaIndex).get('questions') as FormArray).removeAt(qusIndex);
+  removeOptions(areaIndex: number, subAreaIndex: number, qusIndex: number, optionIndex:number) {
+    ((((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).at(subAreaIndex).get('questions') as FormArray).at(qusIndex).get('options') as FormArray).removeAt(optionIndex);
   }
 
   setAreas(areas: areas[]): FormArray {
