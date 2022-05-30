@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { areas, data, options, questions, subAreas } from './model';
 import { RequestService } from './request.service';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
@@ -58,27 +58,27 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     // this.loading = true;
     this.configForm = this.builder.group({
-      id: [''],
-      name_test: [''],
-      description: [''],
+      id: ['', Validators.required],
+      name_test: ['', Validators.required],
+      description: ['', Validators.required],
       text_result: [''],
       area_test: this.builder.array([
         this.builder.group({
-          id: [''],
-          title_area: [''],
-          factor: [''],
+          id: ['', Validators.required],
+          title_area: ['', Validators.required],
+          factor: ['', Validators.required],
           subAreas: this.builder.array([])
         }),
         this.builder.group({
-          id: [''],
-          title_area: [''],
-          factor: [''],
+          id: ['', Validators.required],
+          title_area: ['', Validators.required],
+          factor: ['', Validators.required],
           subAreas: this.builder.array([])
         }),
         this.builder.group({
-          id: [''],
-          title_area: [''],
-          factor: [''],
+          id: ['', Validators.required],
+          title_area: ['', Validators.required],
+          factor: ['', Validators.required],
           subAreas: this.builder.array([])
         })
       ]),
@@ -119,10 +119,11 @@ export class AppComponent implements OnInit{
 
   /** Add sub areas **/
   addSubArea(index: number) {
+
     const control = (<FormArray> this.configForm.controls['area_test']).at(index).get('subAreas') as FormArray;
     const subArea = this.builder.group({
-      sub_area_title: [],
-      sub_id: [],
+      sub_area_title: ['', Validators.required],
+      sub_id: [control.length, Validators.required],
       questions: this.builder.array([])
     });
     control.push(subArea);
@@ -135,29 +136,29 @@ export class AppComponent implements OnInit{
   addQuestions(areaIndex: number, subAreaIndex: number) {
     const control = ((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).at(subAreaIndex).get('questions') as FormArray;
     const question = this.builder.group({
-      id: [],
+      id: [control.length ? control.at(control.length -1).get('id').value + 1 : 0, Validators.required],
       title: [],
       label: [],
       options: this.builder.array([])
     });
     control.push(question);
   }
-  removeQuestions(areaIndex: number, subAreaIndex: number) {
-    ((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).removeAt(subAreaIndex);
+  removeQuestions(areaIndex: number, subAreaIndex: number, qusIndex: number) {
+    (((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).at(subAreaIndex).get('questions') as FormArray).removeAt(qusIndex);
   }
   /** Add Options **/
   addOptions(areaIndex: number, subAreaIndex: number, qusIndex: number) {
     const control = (((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).at(subAreaIndex).get('questions') as FormArray).at(qusIndex).get('options') as FormArray;
     const options = this.builder.group({
-      id: [],
+      id: [control.length ? control.at(control.length -1).get('id').value + 1 : 0, Validators.required],
       label: [],
       value: [],
       result_text: []
     });
     control.push(options);
   }
-  removeOptions(areaIndex: number, subAreaIndex: number, qusIndex: number) {
-    (((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).at(subAreaIndex).get('questions') as FormArray).removeAt(qusIndex);
+  removeOptions(areaIndex: number, subAreaIndex: number, qusIndex: number, optionIndex:number) {
+    ((((<FormArray> this.configForm.controls['area_test']).at(areaIndex).get('subAreas') as FormArray).at(subAreaIndex).get('questions') as FormArray).at(qusIndex).get('options') as FormArray).removeAt(optionIndex);
   }
   setAreas(areas: areas[]): FormArray {
     const formArray = new FormArray([]);

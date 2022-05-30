@@ -59,7 +59,7 @@
   width: 95%;
 }
 ::ng-deep .mat-form-field.ng-dirty > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-outline {
-  color: red;
+  color: #169137;
 }
 @media (max-width: 768px) {
   .full-width {
@@ -82,5 +82,5 @@
   ::ng-deep .form-fields {
     padding: 0px !important;
   }
-  
+
 }
