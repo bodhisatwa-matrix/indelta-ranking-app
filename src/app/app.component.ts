@@ -4,6 +4,9 @@ import { areas, data, options, questions, subAreas } from './model';
 import { RequestService } from './request.service';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { MatExpansionPanel } from '@angular/material/expansion';
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 interface areaDropDown {
   id: number,
@@ -302,5 +305,96 @@ export class AppComponent implements OnInit{
     x.print();
     x.document.close();
     x.close();
+  }
+  content: Array<any> = [];arr = [];
+  pdfContent: Object = {content: this.content};
+  generatePDF() {
+    let pdfContent: Object = {content: this.generatePdf1(this.configForm.value)};
+    pdfMake.createPdf(pdfContent).download();
+  }
+
+
+  /*generatePdfContent(data, hasArray=false) {
+    Object.keys(data).forEach(key => {
+      if (Array.isArray(data[key])) {
+        if(this.arr.length) {
+          this.content.push({key: key, value: ""});
+        } else {
+          this.arr.push({key: key, value: ""});
+        }
+        //content.push({ul: arr});
+        for (const d of data[key]) {
+          this.generatePdfContent(d, true);
+        }
+      } else {
+        if(hasArray) {
+          if(!this.arr.length){
+            this.arr.push({key: key, value: data[key]});
+          } else {
+            let _index = this.arr.reverse().findIndex(a => a.hasOwnProperty('ul'));
+            let pul = this.arr[_index] || [];
+            if(_index >= 0) {
+              this.arr.push({ul: [...pul['ul'], {key: key, value: data[key]}]})
+            } else {
+              this.arr.push({key: key, value: data[key]})
+            }
+          }
+        } else {
+          this.content.push({key: key, value: data[key]});
+        }
+      }
+    });
+  }*/
+
+  generatePdf1(data) {
+    let content = [];
+    Object.keys(data).forEach(key => {
+      if(Array.isArray(data[key])) {
+        let ul = [];
+        for (const d of data[key]) {
+          Object.keys(d).forEach(key1 => {
+            if(Array.isArray(d[key1])) {
+              let level2 = [];
+              for (const d1 of d[key1]) {
+                Object.keys(d1).forEach(key2 => {
+                  if(Array.isArray(d1[key2])) {
+                    let level3 = [];
+                    for (const d2 of d1[key2]) {
+                      Object.keys(d2).forEach(key3 => {
+                        if(Array.isArray(d2[key3])) {
+                          let level4 = [];
+                          for (const d3 of d2[key3]) {
+                            Object.keys(d3).forEach(key4 => {
+                              level4.push({text: `${this.camelize(key4)} : ${d3[key4]}`, listType: 'none'});
+                            });
+                          }
+                          level3.push({text: `${this.camelize(key3)} :`, listType: 'none'}) ;
+                          level3.push({ul: level4});
+                        } else {
+                          level3.push({text: `${this.camelize(key3)} : ${d2[key3]}`, listType: 'none'});
+                        }
+                      });
+                    }
+                    level2.push({text: `${this.camelize(key2)} :`, listType: 'none'}) ;
+                    level2.push({ul: level3});
+                  } else {
+                    level2.push({text: `${this.camelize(key2)} : ${d1[key2]}`, listType: 'none'});
+                  }
+                });
+              }
+              ul.push({text: `${this.camelize(key1)} :`, listType: 'none'}) ;
+              ul.push({ul: level2});
+            } else {
+              ul.push({text: `${this.camelize(key1)} : ${d[key1]}`, listType: 'none'});
+            }
+          });
+        }
+        content.push({text: `${this.camelize(key)} :`, listType: 'none'});
+        content.push({ul: ul});
+      } else {
+        content.push({text: `${this.camelize(key)} : ${data[key]}`, listType: 'none'});
+      }
+    });
+    return content;
   }
 }
